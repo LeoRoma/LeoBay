@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LeoBayModel
 {
-    public class User
+    public partial class User
     {
         public int UserId { get; set; }
         public string FirstName { get; set; }

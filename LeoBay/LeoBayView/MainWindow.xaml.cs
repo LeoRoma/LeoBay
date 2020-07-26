@@ -21,9 +21,17 @@ namespace LeoBayView
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Signup _signup = new Signup();
         public MainWindow()
         {
             InitializeComponent();
+            PopulateListBox();
+        }
+
+        private void PopulateListBox()
+        {
+            LabelDisplay.Content = _signup.GetName();
+
         }
     }
 }

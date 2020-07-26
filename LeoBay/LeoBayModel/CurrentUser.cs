@@ -4,8 +4,9 @@ using System.Text;
 
 namespace LeoBayModel
 {
-    class CurrentUser
+    public class CurrentUser
     {
+        private string _currentUserId;
         public int CurrentUserId { get; set; }
     }
 }
