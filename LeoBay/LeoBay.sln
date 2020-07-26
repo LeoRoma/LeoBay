@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeoBayController", "LeoBayC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeoBayModel", "LeoBayModel\LeoBayModel.csproj", "{3C927B15-437A-45BE-90E5-DB581AF50F76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeoBayTests", "LeoBayTests\LeoBayTests.csproj", "{E4A25FF7-3971-44C0-94E2-5441BC657825}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3C927B15-437A-45BE-90E5-DB581AF50F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C927B15-437A-45BE-90E5-DB581AF50F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C927B15-437A-45BE-90E5-DB581AF50F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A25FF7-3971-44C0-94E2-5441BC657825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A25FF7-3971-44C0-94E2-5441BC657825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A25FF7-3971-44C0-94E2-5441BC657825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A25FF7-3971-44C0-94E2-5441BC657825}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
