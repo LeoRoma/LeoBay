@@ -33,5 +33,10 @@ namespace LeoBayView
             LabelDisplay.Content = _signup.GetName();
 
         }
+
+        private void ButtonHomeClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

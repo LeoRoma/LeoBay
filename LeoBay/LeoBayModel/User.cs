@@ -18,7 +18,7 @@ namespace LeoBayModel
         public string Password { get; set; }
         [StringLength(50)]
         public List<Product> Products { get; } = new List<Product>();
-        public List<Sale> Sales { get; } = new List<Sale>();
+        public List<Order> Orders { get; } = new List<Order>();
 
     }
 }

@@ -8,7 +8,7 @@ namespace LeoBayModel
     public class LeoBayContext : DbContext
     { 
         public DbSet<User> Users { get; set; }
-        public DbSet<Sale> Sales { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Product { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

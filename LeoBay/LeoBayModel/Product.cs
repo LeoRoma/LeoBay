@@ -21,7 +21,7 @@ namespace LeoBayModel
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public User User { get; set; }
-        public List<Sale> Sales { get; } = new List<Sale>();
+        public List<Order> Orders { get; } = new List<Order>();
 
     }
 }
