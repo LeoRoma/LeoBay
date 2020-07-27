@@ -60,8 +60,9 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <StackPanel  Name="RegisterPanel" Orientation="Vertical" VerticalAlignment="Center"/>
-                <StackPanel  Name="LoginPanel" Orientation="Vertical" VerticalAlignment="Center"/>
+                <Frame x:Name="Main" NavigationUIVisibility="Hidden"></Frame>
+                <!--<StackPanel  Name="RegisterPanel" Orientation="Vertical" VerticalAlignment="Center"/>-->
+                <!--<StackPanel  Name="LoginPanel" Orientation="Vertical" VerticalAlignment="Center"/>-->
             </Grid>
         </Grid>
 

@@ -39,12 +39,12 @@ namespace LeoBayView
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
-            RegisterPanel.Children.Add(_registerView);
+            Main.Content = _registerView;
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-           LoginPanel.Children.Add(_loginView);
+            Main.Content = _loginView;
         }
     }
 }

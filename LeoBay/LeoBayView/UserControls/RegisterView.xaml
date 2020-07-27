@@ -34,7 +34,7 @@
                 <RowDefinition Height="252*" />
                 <!--   <RowDefinition Height="12*" />-->
             </Grid.RowDefinitions>
-            <TextBlock Height="20" x:Name ="ErrorMessage" HorizontalAlignment="Left" Margin="67,0,0,0"  VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
+            <TextBlock Height="20" x:Name="ErrorMessage" HorizontalAlignment="Left" Margin="67,0,0,0"  VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
             <TextBlock Height="23" x:Name="TextBlockFirstname" HorizontalAlignment="Left" Margin="67,20,0,0" Text="First Name:" VerticalAlignment="Top" Width="110" />
             <TextBlock Height="23" x:Name="TextBlockLastName" HorizontalAlignment="Left" Margin="67,50,0,0" Text="Last Name:" VerticalAlignment="Top" Width="110" />
             <TextBlock Height="23" x:Name="TextBlockEmailId" HorizontalAlignment="Left" Margin="67,80,0,0" Text="EmailId" VerticalAlignment="Top" Width="110" />
