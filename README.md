@@ -23,20 +23,22 @@ The application that allows the users to list, buy and sell items.
 - Enter in ```LeoBay\LeoBay\LeoBayView\bin\Debug\netcoreapp3.1``` and run ```LeoBayView.exe```
 
 ## Sprint 1
-Set-up:
+**Goals**
+Set-up
 - Model
 - WPF
 - Controller
 - Test
+- Connect MVC
 
 ### Review
 - Relations between Product and Order table were wrong
 - User stories need to be more detailed
 
 ### Retro
-**What went well:**
-- Overall the project went well, the MVC was connected, I could retrieve the data from the database to the view.
+**What went well**
+- The MVC was connected, I could retrieve the data from the database to the view.
 
-**What went wrong:**
-- Not have a fully knowledge with EntityFramework I have struggled to understand how to update my migration after I have changed my Model.
+**What went wrong**
+- Not having a full grasp with EntityFramework I have struggled to understand how to update my migration after I have changed my Model.
 - I had to re-setup my project from scratch
