@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeoBayModel.Migrations
 {
     [DbContext(typeof(LeoBayContext))]
-    [Migration("20200726154242_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200727085640_LeoBay")]
+    partial class LeoBay
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,8 +34,8 @@ namespace LeoBayModel.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("ImageData")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<double>("Price")
                         .HasColumnType("float")

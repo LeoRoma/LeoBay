@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LeoBayModel.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class LeoBay : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,8 +32,8 @@ namespace LeoBayModel.Migrations
                     ProductName = table.Column<string>(nullable: true),
                     Price = table.Column<double>(maxLength: 50, nullable: false),
                     Description = table.Column<string>(nullable: true),
+                    ImageData = table.Column<byte[]>(nullable: true),
                     SellerId = table.Column<int>(nullable: false),
-                    Image = table.Column<string>(nullable: true),
                     Date = table.Column<DateTime>(nullable: false),
                     UserId = table.Column<int>(nullable: true)
                 },
