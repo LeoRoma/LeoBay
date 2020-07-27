@@ -4,7 +4,7 @@ using LeoBayModel;
 
 namespace LeoBayController
 {
-    public class Signup
+    public class RegisterController
     {
         static void Main(string[] args)
         {

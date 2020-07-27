@@ -22,8 +22,9 @@ namespace LeoBayView
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Signup _signup = new Signup();
-        private Register _register = new Register();
+        private RegisterController _registerController = new RegisterController();
+        private RegisterView _registerView = new RegisterView();
+        private LoginView _loginView = new LoginView();
         public MainWindow()
         {
             InitializeComponent();
@@ -31,14 +32,19 @@ namespace LeoBayView
 
         
 
-        private void ButtonHomeClick(object sender, RoutedEventArgs e)
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void ButtonRegisterClick(object sender, RoutedEventArgs e)
+        private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
-            RegisterPanel.Children.Add(_register);
+            RegisterPanel.Children.Add(_registerView);
+        }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+           LoginPanel.Children.Add(_loginView);
         }
     }
 }

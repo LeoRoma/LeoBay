@@ -17,19 +17,14 @@ namespace LeoBayView.UserControls
     /// <summary>
     /// Interaction logic for Register.xaml
     /// </summary>
-    public partial class Register : UserControl
+    public partial class RegisterView : UserControl
     {
-        private Signup _signup = new Signup();
-        public Register()
+        private RegisterController _registerController = new RegisterController();
+        //private MainWindow _mainWindow = new MainWindow();
+        private LoginView _loginView = new LoginView();
+        public RegisterView()
         {
             InitializeComponent();
-            PopulateListBox();
-        }
-
-        private void PopulateListBox()
-        {
-            //LabelDisplay.Content = _signup.GetName();
-
         }
 
         private void ButtonSubmit_Click(object sender, RoutedEventArgs e)
@@ -48,6 +43,11 @@ namespace LeoBayView.UserControls
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            //_mainWindow.LoginPanel.Children.Add(_loginView);
+        }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
 
         }
