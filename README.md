@@ -15,16 +15,19 @@ The application that allows the users to list, buy and sell items.
 - **Database:** SQL
 - **Frontend:** WPF
 
-## Instructions
+## Project Definition of Done
+- All user stories "done"
+- Completed code uploaded to GitHub and merged into master branch
+- README file provides thorough documentation of the application
+- Code is concise and clear, following good naming conventions
+- Application encapsulated behind a well designed and easy to use user interface.
 
-- Open your terminal.
-- Type the follow command into your terminal to clone the remote repository to your local folder ```git clone https://github.com/LeoRoma/LeoBay.git```
-- To change into application folder ```cd LeoBay```
-- Enter in ```LeoBay\LeoBay\LeoBayView\bin\Debug\netcoreapp3.1``` and run ```LeoBayView.exe```
+## Entity Relationship Diagram
 
+![Image screenshot](./screenshots/erd.png)
 ## Sprint 1
 **Goals**
-Set-up
+Set-up:
 - Model
 - WPF
 - Controller
