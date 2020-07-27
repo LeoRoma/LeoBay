@@ -8,10 +8,10 @@ namespace LeoBayController
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine(GetName());
         }
 
-        public string  GetName()
+        public string GetName()
         {
             using (var db = new LeoBayContext())
             {
