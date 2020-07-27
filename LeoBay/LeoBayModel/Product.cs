@@ -16,12 +16,12 @@ namespace LeoBayModel
         
         public byte[] ImageData { get; set; }
         public  int SellerId { get; set; }
-     
+        public int OrderId { get; set; }
         public DateTime Date { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public User User { get; set; }
-        public List<Order> Orders { get; } = new List<Order>();
+        public Order Order { get; set; }
 
     }
 }

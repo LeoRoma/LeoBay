@@ -4,14 +4,16 @@ using LeoBayModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LeoBayModel.Migrations
 {
     [DbContext(typeof(LeoBayContext))]
-    partial class LeoBayContextModelSnapshot : ModelSnapshot
+    [Migration("20200727135341_OrderProductRelationChanged")]
+    partial class OrderProductRelationChanged
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,6 +44,8 @@ namespace LeoBayModel.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("OrderId");
+
+                    b.HasIndex("ProductId");
 
                     b.HasIndex("UserId");
 
@@ -82,8 +86,6 @@ namespace LeoBayModel.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("OrderId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Product");
@@ -118,6 +120,12 @@ namespace LeoBayModel.Migrations
 
             modelBuilder.Entity("LeoBayModel.Order", b =>
                 {
+                    b.HasOne("LeoBayModel.Product", "Product")
+                        .WithMany("Orders")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("LeoBayModel.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId");
@@ -125,12 +133,6 @@ namespace LeoBayModel.Migrations
 
             modelBuilder.Entity("LeoBayModel.Product", b =>
                 {
-                    b.HasOne("LeoBayModel.Order", "Order")
-                        .WithMany("Prodcuts")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("LeoBayModel.User", "User")
                         .WithMany("Products")
                         .HasForeignKey("UserId");
