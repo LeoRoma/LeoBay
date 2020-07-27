@@ -10,27 +10,35 @@
        
         <!--Navigation Panel-->
         <Grid Background="DarkBlue">
-            <!--Header-->
-            <Grid Background="#2E333A"
+            
+            <!--Navigation Panel Top-->
+            <Grid x:Name="nav_panel_top"  Background="#2E333A"
                   VerticalAlignment="Top"
                   Height="65">
-                <Label x:Name="Header" Content="Leo" Grid.Row="0" FontSize="35">
-
-                </Label>
+                <Label x:Name="Header" Content="LeoBay" Grid.Row="0" FontSize="35" HorizontalAlignment="Center" />
+                <StackPanel x:Name="stack_panel_top">
+                    <Button x:Name="ButtonRegister" Margin="0,10,0,10" Click="ButtonRegisterClick" 
+                            VerticalAlignment="Center" HorizontalAlignment="Right">
+                        Register
+                    </Button>
+                </StackPanel>
             </Grid>
+            <!--Navigation Panel Left-->
             <Grid x:Name="nav_panel_left" 
                   HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  Height="525"
                   Width="75"
                   Background="#2E333A">
                 
-                <StackPanel x:Name="stack_panel">
+                <StackPanel x:Name="stack_panel_bottom">
                     
                     <Button x:Name="ButtonHome" Margin="0,10,0,10" Click="ButtonHomeClick">
                         Home
                     </Button>
-                    <Button x:Name="ButtonRegister" Margin="0,10,0,10" Click="ButtonRegisterClick">
+                    <!--<Button x:Name="ButtonRegister" Margin="0,10,0,10" Click="ButtonRegisterClick">
                         Register
-                    </Button>
+                    </Button>-->
                     <Button>
                         Login
                     </Button>

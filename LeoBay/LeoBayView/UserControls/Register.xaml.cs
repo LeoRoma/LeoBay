@@ -28,7 +28,27 @@ namespace LeoBayView.UserControls
 
         private void PopulateListBox()
         {
-            LabelDisplay.Content = _signup.GetName();
+            //LabelDisplay.Content = _signup.GetName();
+
+        }
+
+        private void ButtonSubmit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonReset_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
