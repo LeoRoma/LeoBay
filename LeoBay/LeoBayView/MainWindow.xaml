@@ -46,10 +46,11 @@
                 </StackPanel>
                 
             </Grid>
-            <Grid Width="724" Height="520" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <StackPanel Name="RegisterPanel" Orientation="Vertical"/>
+            <Grid Width="725" Height="520" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <StackPanel  Name="RegisterPanel" Orientation="Vertical" VerticalAlignment="Center"/>
 
             </Grid>
         </Grid>
+        
     </Grid>
 </Window>
