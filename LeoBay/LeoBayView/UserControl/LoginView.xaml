@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LeoBayView.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="725" Background="White">
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+             d:DesignHeight="450" d:DesignWidth="725">
+    <Grid  Height="350" Width="525" Background="DimGray">
         <!--<TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="LoginHeading" Text="Login:" VerticalAlignment="Top" FontSize="17" FontStretch="ExtraCondensed"/>
         <-->
         <!--TextBlock Height="50" HorizontalAlignment="Left" Margin="24,48,0,0" Name="textBlockHeading" VerticalAlignment="Top" FontSize="12" FontStyle="Italic" Padding="5">  

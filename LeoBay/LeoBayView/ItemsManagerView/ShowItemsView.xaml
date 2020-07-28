@@ -6,17 +6,23 @@
              xmlns:local="clr-namespace:LeoBayView.ItemsManagerView"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="725">
-    <Grid Background="White">
-        <Grid>
-            <ListView Margin="10" Name="lvUsers">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="Description" Width="50" DisplayMemberBinding="{Binding Age}" />
-                        <GridViewColumn Header="Price" Width="150" DisplayMemberBinding="{Binding Mail}" />
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </Grid>
+    <Grid>
+        <ListView Margin="10" Name="AllItems">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="Name: " />
+                        <TextBlock Text="{Binding ProductName}" FontWeight="Bold" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="Price: £" />
+                        <TextBlock Text="{Binding Price}" FontWeight="Bold" />
+                        <TextBlock Text="Description: " />
+                        <TextBlock Text="{Binding Description}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
+                        <TextBlock Text="Image: " />
+                        <TextBlock x:Name="ImageBox" Text="{Binding ImageData}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

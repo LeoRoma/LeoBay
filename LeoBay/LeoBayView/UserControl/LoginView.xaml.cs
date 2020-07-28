@@ -51,7 +51,7 @@ namespace LeoBayView.UserControls
                 if (_loginController.AuthenticateUser(email, password) == true)
                 {
                     string welcomeMessage = _loginController.GetCurrentUser();
-                    ErrorMessage.Text = welcomeMessage;
+                    MessageBox.Show(welcomeMessage);
                 }
                 else
                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LeoBayController.ItemsManagerController;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Drawing;
 
 namespace LeoBayView.ItemsManagerView
 {
@@ -18,9 +21,18 @@ namespace LeoBayView.ItemsManagerView
     /// </summary>
     public partial class ShowItemsView : UserControl
     {
+        private ItemsManagerController _itemsManagerController = new ItemsManagerController();
         public ShowItemsView()
         {
             InitializeComponent();
+            GetAllItems();
+        }
+
+        public void GetAllItems()
+        {
+            Console.WriteLine(_itemsManagerController.GetAllItems());
+            AllItems.ItemsSource = _itemsManagerController.GetAllItems();
+
         }
     }
 }

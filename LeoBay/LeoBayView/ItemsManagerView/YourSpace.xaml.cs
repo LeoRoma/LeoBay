@@ -24,7 +24,7 @@ namespace LeoBayView.ItemsManagerView
             InitializeComponent();
         }
 
-        private void ButtonHome_Click(object sender, RoutedEventArgs e)
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
             _addItem.Show();
         }

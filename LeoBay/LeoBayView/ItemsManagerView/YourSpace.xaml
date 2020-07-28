@@ -5,13 +5,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LeoBayView.ItemsManagerView"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="725">
+             d:DesignHeight="450" d:DesignWidth="650">
     <Grid Background="White">
         <Label Content="Hi"></Label>
         <Grid Width="150" Height="50">
-            <Button x:Name="ButtonHome" Margin="0,10,0,10" Click="ButtonHome_Click">
+            <Button x:Name="ButtonHome" Margin="0,10,0,10" Click="ButtonAdd_Click">
                 Add Item
             </Button>
+            d:DesignHeight="450" d:DesignWidth="725">
+            <Grid>
+                <ListView Margin="10" Name="AllItems">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Name: " />
+                                <TextBlock Text="{Binding ProductName}" FontWeight="Bold" />
+                                <TextBlock Text=", " />
+                                <TextBlock Text="Price: £" />
+                                <TextBlock Text="{Binding Price}" FontWeight="Bold" />
+                                <TextBlock Text="Description: " />
+                                <TextBlock Text="{Binding Description}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
+                                <TextBlock Text="Image: " />
+                                <TextBlock x:Name="ImageBox" Text="{Binding ImageData}" />
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
         </Grid>
         
     </Grid>

@@ -16,8 +16,7 @@ using System.Data;
 using System.IO;
 using System.Data.SqlClient;
 using System.Drawing.Imaging;
-using LeoBayController;
-using LeoBayController.ImageManagerController;
+using LeoBayController.ItemsManagerController;
 
 namespace LeoBayView.ItemsManagerView
 {
@@ -26,7 +25,7 @@ namespace LeoBayView.ItemsManagerView
     /// </summary>
     public partial class AddItem : Window
     {
-        private AddItemController _addItemController = new AddItemController();
+        private ItemsManagerController _itemsManagerController = new ItemsManagerController();
  
         public AddItem()
         {
@@ -54,7 +53,7 @@ namespace LeoBayView.ItemsManagerView
             double price = double.Parse(TextBoxPrice.Text);
             string description = TextBoxDescription.Text;
             byte[] imageToByte = File.ReadAllBytes(TextBoxImage1.Text);
-            _addItemController.AddNewItem(name, price, description, imageToByte);
+            _itemsManagerController.AddNewItem(name, price, description, imageToByte);
             MessageBox.Show("You have added an item!");
             this.Close();
         }

@@ -16,7 +16,7 @@
                   VerticalAlignment="Top"
                   Height="75">
                 <Label x:Name="Header" Content="LeoBay" Grid.Row="0" FontSize="35" HorizontalAlignment="Center" />
-                <StackPanel x:Name="stack_panel_top">
+                <StackPanel x:Name="stack_panel_top" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <Button x:Name="ButtonLogin" Margin="0,10,0,10" Click="ButtonLogin_Click" 
                             VerticalAlignment="Center" HorizontalAlignment="Right" Content="Login"/>
                     <Button x:Name="ButtonRegister" Click="ButtonRegister_Click" VerticalAlignment="Center" HorizontalAlignment="Right"
@@ -55,7 +55,7 @@
                 </StackPanel>
 
             </Grid>
-            <Grid Width="725" Height="520" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Grid Width="725" Height="510" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                 <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>-->

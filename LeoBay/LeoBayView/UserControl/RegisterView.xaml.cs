@@ -23,8 +23,7 @@ namespace LeoBayView.UserControls
     public partial class RegisterView : UserControl
     {
         private RegisterController _registerController = new RegisterController();
-        //private MainWindow _mainWindow = new MainWindow();
-        //private LoginView _loginView = new LoginView();
+
         public RegisterView()
         {
             InitializeComponent();
@@ -69,7 +68,7 @@ namespace LeoBayView.UserControls
                     ErrorMessage.Text = "";
 
                     _registerController.CreateNewUser(firstName, lastName, email, password);
-                    ErrorMessage.Text = "You have Registered successfully.";
+                    MessageBox.Show("Registestration completed");
                     Reset();
                 }
             }
@@ -91,7 +90,7 @@ namespace LeoBayView.UserControls
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            //_mainWindow.Main.Content = _loginView;
+            
         }
     }
 }
