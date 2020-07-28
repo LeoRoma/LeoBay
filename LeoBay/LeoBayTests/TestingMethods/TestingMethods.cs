@@ -9,7 +9,6 @@ namespace LeoBayTests
 {
     public class TestingMethods
     {
-        private CurrentUser _currentUser = new CurrentUser();
         public List<User> GetUser()
         {
             using (var db = new LeoBayContext())
@@ -49,26 +48,10 @@ namespace LeoBayTests
                      }).ToList();
                 if (details.FirstOrDefault() != null && pw == password)
                 {
-                    int currentUserId = details.FirstOrDefault().UserId;
-                    string currentFirstName = details.FirstOrDefault().FirstName;
-                    string currentLastName = details.FirstOrDefault().LastName;
-                    string currentEmail = details.FirstOrDefault().Email;
-                    SetCurrentUser(currentUserId, currentFirstName, currentLastName, currentEmail);
                     return true;
                 }
                 return false;
             }
-        }
-
-        public void SetCurrentUser(int currentUserId, string currentFirstName, string currentLastName, string currentEmail)
-        {
-            //CurrentUser currentUser = new CurrentUser()
-            //{
-            _currentUser.CurrentUserId = currentUserId;
-            _currentUser.CurrentFirstName = currentFirstName;
-            _currentUser.CurrentLastName = currentLastName;
-            _currentUser.CurrentEmail = currentEmail;
-            //};
         }
     }
 }
