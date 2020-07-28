@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using LeoBayController;
 using LeoBayView.ItemsManagerView;
 using LeoBayView.UserControls;
+using LeoBayModel;
 
 namespace LeoBayView
 {
@@ -28,6 +29,7 @@ namespace LeoBayView
         private LoginView _loginView = new LoginView();
         private ShowItemsView _showItemsView = new ShowItemsView();
         private YourSpace _yourSpace = new YourSpace();
+        private bool _login;
         public MainWindow()
         {
             InitializeComponent();
@@ -52,12 +54,44 @@ namespace LeoBayView
 
         private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
         {
+            if(_login == false)
+            {
+                MessageBoxResult result = MessageBox.Show("You must login before to acceed this area", "Error");
+            }
             Main.Content = _showItemsView;
         }
 
         private void ButtonYourSpace_Click(object sender, RoutedEventArgs e)
         {
+            if (_login == false)
+            {
+                MessageBoxResult result = MessageBox.Show("You must login before to acceed this area", "Error");
+            }
             Main.Content = _yourSpace;
+        }
+
+        private void ButtonLogout_Click(object sender, RoutedEventArgs e)
+        {
+            EndCurrentUser();
+            MessageBoxResult result = MessageBox.Show("You have logged out", "Logout");
+
+        }
+
+        private void EndCurrentUser()
+        {
+            CurrentUser.Id = 0;
+            CurrentUser.FirstName = "";
+            CurrentUser.LastName = "";
+            CurrentUser.Email = "";
+        }
+
+        private void CheckLogin()
+        {
+            if(CurrentUser.Id == 0)
+            {
+                _login = false;
+            }
+            _login = true;
         }
     }
 }
