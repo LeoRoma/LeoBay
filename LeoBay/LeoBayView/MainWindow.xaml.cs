@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LeoBayController;
+using LeoBayView.ItemsManagerView;
 using LeoBayView.UserControls;
 
 namespace LeoBayView
@@ -25,6 +26,8 @@ namespace LeoBayView
         private RegisterController _registerController = new RegisterController();
         private RegisterView _registerView = new RegisterView();
         private LoginView _loginView = new LoginView();
+        private ShowItemsView _showItemsView = new ShowItemsView();
+        private YourSpace _yourSpace = new YourSpace();
         public MainWindow()
         {
             InitializeComponent();
@@ -45,6 +48,16 @@ namespace LeoBayView
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = _loginView;
+        }
+
+        private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = _showItemsView;
+        }
+
+        private void ButtonYourSpace_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = _yourSpace;
         }
     }
 }

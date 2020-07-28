@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="725">
     <Grid  Height="350" Width="525" Background="DimGray">
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" Name="textBlockHeading" Text="Registration:" VerticalAlignment="Top" Width="110"  FontSize="17" FontStretch="ExtraCondensed"/>
+        <!--<TextBlock Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" Name="textBlockHeading" Text="Registration:" VerticalAlignment="Top" Width="110"  FontSize="17" FontStretch="ExtraCondensed"/>-->
         <!--Button as a Link button using style-->
-        <Button Margin="451,5,12,288" Content="Login" Cursor="Hand" Click="ButtonLogin_Click">
-            <Button.Template>
+        <!--<Button Margin="451,5,12,288" Content="Login" Cursor="Hand" Click="ButtonLogin_Click">-->
+            <!--<Button.Template>
                 <ControlTemplate TargetType="Button">
                     <TextBlock TextDecorations="Underline">  
                     <ContentPresenter />
@@ -27,7 +27,7 @@
                     </Style.Triggers>
                 </Style>
             </Button.Style>
-        </Button>
+        </Button>-->
         <!--end Button as a Link button using style-->
         <Grid Margin="31,0,29,23" Background="White" Height="264" VerticalAlignment="Bottom">
             <Grid.RowDefinitions>

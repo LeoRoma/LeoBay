@@ -13,6 +13,7 @@ namespace LeoBayModel
         public int BuyerId { get; set; }
         
         public User User { get; set; }
+
         public string Sold { get; set; }
         public DateTime Date { get; set; }
         [DataType(DataType.Date)]
