@@ -11,7 +11,6 @@ namespace LeoBayTests
     {
         private RegisterController _registerController = new RegisterController();
         private LoginController _loginController = new LoginController();
-        private CurrentUser _currentUser = new CurrentUser();
         private TestingMethods _testingMethods = new TestingMethods();
 
         [SetUp]

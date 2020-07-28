@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeoBayModel.Migrations
 {
     [DbContext(typeof(LeoBayContext))]
-    [Migration("20200727085640_LeoBay")]
-    partial class LeoBay
+    [Migration("20200728232633_Products")]
+    partial class Products
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,35 @@ namespace LeoBayModel.Migrations
                 .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("LeoBayModel.Order", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BuyerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Sold")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
 
             modelBuilder.Entity("LeoBayModel.Product", b =>
                 {
@@ -37,6 +66,9 @@ namespace LeoBayModel.Migrations
                     b.Property<byte[]>("ImageData")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
                     b.Property<double>("Price")
                         .HasColumnType("float")
                         .HasMaxLength(50);
@@ -45,50 +77,19 @@ namespace LeoBayModel.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SellerId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(16);
 
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Product");
-                });
-
-            modelBuilder.Entity("LeoBayModel.Sale", b =>
-                {
-                    b.Property<int>("SaleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("BuyerId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SellerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Sold")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("SaleId");
-
-                    b.HasIndex("ProductId");
+                    b.HasIndex("OrderId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Sales");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("LeoBayModel.User", b =>
@@ -118,23 +119,21 @@ namespace LeoBayModel.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("LeoBayModel.Product", b =>
+            modelBuilder.Entity("LeoBayModel.Order", b =>
                 {
                     b.HasOne("LeoBayModel.User", "User")
-                        .WithMany("Products")
+                        .WithMany("Orders")
                         .HasForeignKey("UserId");
                 });
 
-            modelBuilder.Entity("LeoBayModel.Sale", b =>
+            modelBuilder.Entity("LeoBayModel.Product", b =>
                 {
-                    b.HasOne("LeoBayModel.Product", "Product")
-                        .WithMany("Sales")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("LeoBayModel.Order", "Order")
+                        .WithMany("Prodcuts")
+                        .HasForeignKey("OrderId");
 
                     b.HasOne("LeoBayModel.User", "User")
-                        .WithMany("Sales")
+                        .WithMany("Products")
                         .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618

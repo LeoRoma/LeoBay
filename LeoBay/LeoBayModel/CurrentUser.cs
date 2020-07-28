@@ -5,11 +5,11 @@ using System.Text;
 
 namespace LeoBayModel
 {
-    public partial class CurrentUser
+    public static partial class CurrentUser
     {
-        public int CurrentUserId { get; set; }
-        public string CurrentFirstName { get; set; }
-        public string CurrentLastName { get; set; }
-        public string CurrentEmail { get; set; }
+        public static int Id { get; set; }
+        public static string FirstName { get; set; }
+        public static string LastName { get; set; }
+        public static string Email { get; set; }
     }
 }
