@@ -27,24 +27,10 @@ namespace LeoBayView.ItemsManagerView
     public partial class AddItem : Window
     {
         private AddItemController _addItemController = new AddItemController();
+ 
         public AddItem()
         {
             InitializeComponent();
-        }
-
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cbImages_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void btnShow_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
@@ -69,8 +55,8 @@ namespace LeoBayView.ItemsManagerView
             string description = TextBoxDescription.Text;
             byte[] imageToByte = File.ReadAllBytes(TextBoxImage1.Text);
             _addItemController.AddNewItem(name, price, description, imageToByte);
-
-
+            MessageBox.Show("You have added an item!");
+            this.Close();
         }
     }
 }

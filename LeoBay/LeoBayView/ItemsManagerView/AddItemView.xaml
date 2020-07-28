@@ -20,8 +20,8 @@
         <Label Content="Save and Retrieve Images From Database in WPF" FontSize="20" HorizontalAlignment="Center" Name="lblTitle" VerticalAlignment="Top" Margin="123,11,123,0" />
         <Button Content="Browse" Height="23" HorizontalAlignment="Left" Margin="382,0,0,0" Name="btnBrowse" VerticalAlignment="Center" Width="142" Click="btnBrowse_Click" />
         <Button x:Name="ButtonSave" Content="Save" Height="23" HorizontalAlignment="Left" Margin="382,272,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSave_Click" />
-        <ComboBox Height="23" HorizontalAlignment="Left" Margin="435,61,0,0" Name="cbImages" VerticalAlignment="Top" Width="140" SelectionChanged="cbImages_SelectionChanged" />
-        <Button Content="Show" Height="23" HorizontalAlignment="Left" Margin="583,61,0,0" Name="btnShow" VerticalAlignment="Top" Width="75" Click="btnShow_Click" />
+        <!--<ComboBox Height="23" HorizontalAlignment="Left" Margin="435,61,0,0" Name="cbImages" VerticalAlignment="Top" Width="140" SelectionChanged="cbImages_SelectionChanged" />-->
+        <!--<Button Content="Show" Height="23" HorizontalAlignment="Left" Margin="583,61,0,0" Name="btnShow" VerticalAlignment="Top" Width="75" Click="btnShow_Click" />-->
         <Image x:Name="ImageBox1" Height="172" HorizontalAlignment="Left" Margin="118,241,0,0" Stretch="Fill" VerticalAlignment="Top" Width="248" />
         <Image Height="167" HorizontalAlignment="Left" Margin="435,90,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="223" />
     </Grid>

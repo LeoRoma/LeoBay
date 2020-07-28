@@ -24,18 +24,15 @@ namespace LeoBayView
     /// </summary>
     public partial class MainWindow : Window
     {
-        private RegisterController _registerController = new RegisterController();
         private RegisterView _registerView = new RegisterView();
         private LoginView _loginView = new LoginView();
         private ShowItemsView _showItemsView = new ShowItemsView();
         private YourSpace _yourSpace = new YourSpace();
-        private bool _login;
+
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        
+        }        
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
@@ -54,19 +51,11 @@ namespace LeoBayView
 
         private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
         {
-            if(_login == false)
-            {
-                MessageBoxResult result = MessageBox.Show("You must login before to acceed this area", "Error");
-            }
             Main.Content = _showItemsView;
         }
 
         private void ButtonYourSpace_Click(object sender, RoutedEventArgs e)
         {
-            if (_login == false)
-            {
-                MessageBoxResult result = MessageBox.Show("You must login before to acceed this area", "Error");
-            }
             Main.Content = _yourSpace;
         }
 
@@ -85,13 +74,5 @@ namespace LeoBayView
             CurrentUser.Email = "";
         }
 
-        private void CheckLogin()
-        {
-            if(CurrentUser.Id == 0)
-            {
-                _login = false;
-            }
-            _login = true;
-        }
     }
 }
