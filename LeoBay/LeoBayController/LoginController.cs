@@ -49,19 +49,19 @@ namespace LeoBayController
 
         public void SetCurrentUser(int currentUserId, string currentFirstName, string currentLastName, string currentEmail)
         {
-            CurrentUser currentUser = new CurrentUser()
-            {
-                CurrentUserId = currentUserId,
-                CurrentFirstName = currentFirstName,
-                CurrentLastName = currentLastName,
-                CurrentEmail = currentEmail
-            };
-            Console.WriteLine($"{currentUser.CurrentUserId} {currentUser.CurrentFirstName} {currentUser.CurrentLastName} {currentUser.CurrentEmail} I am here!!");
+            //CurrentUser currentUser = new CurrentUser()
+            //{
+            _currentUser.CurrentUserId = currentUserId;
+            _currentUser.CurrentFirstName = currentFirstName;
+            _currentUser.CurrentLastName = currentLastName;
+            _currentUser.CurrentEmail = currentEmail;
+            //};
+            GetCurrentUser();
         }
 
         public string GetCurrentUser()
         {
-            return $"Welcome to Leobay  {_currentUser.CurrentFirstName} {_currentUser.CurrentLastName}";
+            return $"Welcome to Leobay {_currentUser.CurrentFirstName} {_currentUser.CurrentLastName}";
         }
 
         public string Decrypt(string str)
