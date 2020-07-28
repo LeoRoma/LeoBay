@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using LeoBayController;
+using LeoBayModel;
 
 namespace LeoBayView.UserControls
 {
@@ -20,6 +21,10 @@ namespace LeoBayView.UserControls
     /// </summary>
     public partial class LoginView : UserControl
     {
+        private LoginController _loginController = new LoginController();
+        //private MainWindow _mainWindow = new MainWindow();
+        //private RegisterView _registerView = new RegisterView();
+
         public LoginView()
         {
             InitializeComponent();
@@ -40,29 +45,25 @@ namespace LeoBayView.UserControls
             }
             else
             {
-                //string email = TextBoxEmail.Text;
-                //string password = passwordBox1.Password;
-                //SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-                //con.Open();
-                //SqlCommand cmd = new SqlCommand("Select * from Registration where Email='" + email + "'  and password='" + password + "'", con);
-                //cmd.CommandType = CommandType.Text;
-                //SqlDataAdapter adapter = new SqlDataAdapter();
-                //adapter.SelectCommand = cmd;
-                //DataSet dataSet = new DataSet();
-                //adapter.Fill(dataSet);
-                //if (dataSet.Tables[0].Rows.Count > 0)
-                //{
-                //    string username = dataSet.Tables[0].Rows[0]["FirstName"].ToString() + " " + dataSet.Tables[0].Rows[0]["LastName"].ToString();
-                //    welcome.TextBlockName.Text = username;//Sending value from one form to another form.  
-                //    welcome.Show();
-                //    Close();
-                //}
-                //else
-                //{
-                //    errormessage.Text = "Sorry! Please enter existing emailid/password.";
-                //}
-                //con.Close();
+                string email = TextBoxEmail.Text;
+                string password = passwordBox1.Password;
+
+                if (_loginController.AuthenticateUser(email, password) == true)
+                {
+                    string welcomeMessage = _loginController.GetCurrentUser();
+                    ErrorMessage.Text = welcomeMessage;
+                }
+                else
+                {
+                    ErrorMessage.Text = "Sorry! Please enter existing emailid/password.";
+                }
+
             }
+        }
+
+        private void buttonRegister_Click(object sender, RoutedEventArgs e)
+        {
+            //_mainWindow.Main.Content = _registerView;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace LeoBayView.UserControls
     {
         private RegisterController _registerController = new RegisterController();
         //private MainWindow _mainWindow = new MainWindow();
-        private LoginView _loginView = new LoginView();
+        //private LoginView _loginView = new LoginView();
         public RegisterView()
         {
             InitializeComponent();
@@ -88,19 +88,10 @@ namespace LeoBayView.UserControls
             PasswordBoxConfirm.Password = "";
         }
 
-        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            //_mainWindow.LoginPanel.Children.Add(_loginView);
-        }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            //_mainWindow.Main.Content = _loginView;
         }
     }
 }

@@ -47,9 +47,9 @@
             <PasswordBox Height="23" x:Name="PasswordBox1" HorizontalAlignment="Left" Margin="183,107,0,0" VerticalAlignment="Top" Width="222" />
             <!--For password-->
             <PasswordBox x:Name="PasswordBoxConfirm" Height="23" HorizontalAlignment="Left" Margin="183,136,0,0" VerticalAlignment="Top" Width="222" />
-            <Button x:Name="ButtonSubmit" Content="Submit" Height="23" HorizontalAlignment="Left" Margin="183,204,0,0" VerticalAlignment="Top" Width="70" Click="ButtonSubmit_Click" />
-            <Button x:Name="ButtonReset" Content="Reset" Height="23" HorizontalAlignment="Left" Margin="259,204,0,0" VerticalAlignment="Top" Width="70" Click="ButtonReset_Click" />
-            <Button x:Name="ButtonCancel" Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,204,60,0" VerticalAlignment="Top" Width="70" Click="ButtonCancel_Click" />
+            <Button x:Name="ButtonSubmit" Content="Submit" Height="23" HorizontalAlignment="Left" Margin="232,188,0,0" VerticalAlignment="Top" Width="70" Click="ButtonSubmit_Click" />
+            <Button x:Name="ButtonReset" Content="Reset" Height="23" HorizontalAlignment="Left" Margin="335,188,0,0" VerticalAlignment="Top" Width="70" Click="ButtonReset_Click" />
+
         </Grid>
     </Grid>
 </UserControl>
