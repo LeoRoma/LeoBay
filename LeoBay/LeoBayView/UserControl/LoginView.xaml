@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LeoBayView.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+             d:DesignHeight="450" d:DesignWidth="725" Background="White">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="LoginHeading" Text="Login:" VerticalAlignment="Top" FontSize="17" FontStretch="ExtraCondensed"/>
         <TextBlock Height="50" HorizontalAlignment="Left" Margin="24,48,0,0" Name="textBlockHeading" VerticalAlignment="Top" FontSize="12" FontStyle="Italic" Padding="5">  
@@ -13,7 +13,7 @@
             please click on  
            <!--textblock as a Hyperlink.-->  
             <TextBlock>  
-                 <!--<Hyperlink Click="buttonRegister_Click" FontSize="14" FontStyle="Normal">Register</Hyperlink>-->  
+                 <Hyperlink Click="buttonRegister_Click" FontSize="14" FontStyle="Normal">Register</Hyperlink>  
             </TextBlock>  
             <!--end textblock as a hyperlink-->  
             button  

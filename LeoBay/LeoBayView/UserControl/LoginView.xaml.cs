@@ -22,7 +22,9 @@ namespace LeoBayView.UserControls
     public partial class LoginView : UserControl
     {
         private LoginController _loginController = new LoginController();
-        private CurrentUser _currentUser = new CurrentUser();
+        //private MainWindow _mainWindow = new MainWindow();
+        //private RegisterView _registerView = new RegisterView();
+
         public LoginView()
         {
             InitializeComponent();
@@ -57,6 +59,11 @@ namespace LeoBayView.UserControls
                 }
 
             }
+        }
+
+        private void buttonRegister_Click(object sender, RoutedEventArgs e)
+        {
+            //_mainWindow.Main.Content = _registerView;
         }
     }
 }
