@@ -11,16 +11,12 @@ namespace LeoBayController.ImageManagerController
 {
     public class AddItemController
     {
-        private CurrentUser _currentUser = new CurrentUser();
-        public void AddNewItem(string name, double price, string description, string image)
+        public void AddNewItem(string name, double price, string description, byte[] image)
         {
             using (var db = new LeoBayContext())
             {
-                var newProduct = db.Users.Where(u => u.UserId == _currentUser.CurrentUserId).Include(p => p.Products).FirstOrDefault();
-                byte[] imageToByte = null;
-                FileStream fileStream = new FileStream(image, FileMode.Open, FileAccess.Read);
-                BinaryReader binaryReader = new BinaryReader(fileStream);
-                imageToByte = binaryReader.ReadBytes((int)fileStream.Length);
+                var newProduct = db.Users.Where(u => u.UserId == CurrentUser.Id).Include(p => p.Products).FirstOrDefault();
+                Console.WriteLine(CurrentUser.Id);
 
                 newProduct.Products.Add(
                     new Product
@@ -28,13 +24,13 @@ namespace LeoBayController.ImageManagerController
                         ProductName = name,
                         Price = price,
                         Description = description,
-                        ImageData = @imageToByte,
-                        SellerId = _currentUser.CurrentUserId,
+                        ImageData = image,
+                        SellerId = CurrentUser.Id,
                         Date = DateTime.Now
                     });
                 db.SaveChanges();
             }
         }
-
+  
     }
 }

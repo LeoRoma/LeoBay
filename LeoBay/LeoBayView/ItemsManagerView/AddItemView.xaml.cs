@@ -32,8 +32,6 @@ namespace LeoBayView.ItemsManagerView
             InitializeComponent();
         }
 
-        string imgLocation = "";
-
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
 
@@ -69,8 +67,8 @@ namespace LeoBayView.ItemsManagerView
             string name = TextBoxName.Text;
             double price = double.Parse(TextBoxPrice.Text);
             string description = TextBoxDescription.Text;
-            string image = TextBoxImage1.Text;
-            _addItemController.AddNewItem(name, price, description, image);
+            byte[] imageToByte = File.ReadAllBytes(TextBoxImage1.Text);
+            _addItemController.AddNewItem(name, price, description, imageToByte);
 
 
         }
