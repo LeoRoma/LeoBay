@@ -27,6 +27,7 @@ namespace LeoBayTests.ItemsManagerTests
             Assert.AreEqual(count + 1, newCount);
             // restore
             _testingMethods.DeleteItem();
+            CurrentUser.Id = 0;
         }
 
         [Test]

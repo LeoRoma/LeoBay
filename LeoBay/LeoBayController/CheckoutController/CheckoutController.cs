@@ -20,7 +20,7 @@ namespace LeoBayController.CheckoutController
             }
         }
 
-        public void ConfirmPayment()
+        public void ConfirmPayment(int currentProductId)
         {
             using(var db = new LeoBayContext())
             {
@@ -28,22 +28,18 @@ namespace LeoBayController.CheckoutController
                 order.Sold = "Sold";
                 db.SaveChanges();
             }
-            DeleteSoldItem();
+            DeleteSoldItem(currentProductId);
         }
 
-        public void DeleteSoldItem()
+        public void DeleteSoldItem(int currentProductId)
         {
             using (var db = new LeoBayContext())
             {
-                var products =
-                    (from product in db.Products
-                    join order in db.Orders on product.ProductId equals order.ProductId
-                    select product).FirstOrDefault();
+                var products = db.Products.Where(p => p.ProductId == currentProductId).FirstOrDefault();
                 Console.WriteLine(products);
                 db.Remove(products);
                 db.SaveChanges();
             }
-
         }
     }
 }
