@@ -53,5 +53,40 @@ namespace LeoBayTests
                 return false;
             }
         }
+
+        //CRUD Items
+        public void DeleteItem()
+        {
+            using (var db = new LeoBayContext())
+            {
+                var items = db.Products.Where(p => p.SellerId == p.User.UserId).ToList();
+                items.Reverse();
+                var lastItem = items[0];
+                db.Products.Remove(lastItem);
+                db.SaveChanges();
+            }
+        }
+
+        public void AddNewItem(string name, double price, string description, byte[] image)
+        {
+            using (var db = new LeoBayContext())
+            {
+                var newProduct = db.Users.Where(u => u.UserId == 1).Include(p => p.Products).FirstOrDefault();
+;
+
+                newProduct.Products.Add(
+                    new Product
+                    {
+                        ProductName = name,
+                        Price = price,
+                        Description = description,
+                        ImageData =image,
+                        SellerId = 1,
+                        Date = DateTime.Now
+                    });
+                db.SaveChanges();
+            }
+        }
+
     }
 }

@@ -53,8 +53,8 @@ namespace LeoBayView.ItemsManagerView
             string name = TextBoxName.Text;
             double price = double.Parse(TextBoxPrice.Text);
             string description = TextBoxDescription.Text;
-            byte[] imageToByte = File.ReadAllBytes(TextBoxImage1.Text);
-            _itemsManagerController.AddNewItem(name, price, description, imageToByte);
+            string image = TextBoxImage1.Text;
+            _itemsManagerController.AddNewItem(name, price, description, image);
             MessageBox.Show("You have added an item!");
             this.Close();
         }
