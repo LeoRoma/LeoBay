@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using NUnit.Framework;
 using LeoBayController;
 using LeoBayController.ItemsManagerController;
-using NUnit.Framework;
 using LeoBayModel;
 
 namespace LeoBayTests.EncryptionTests

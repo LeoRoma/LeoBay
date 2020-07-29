@@ -19,5 +19,27 @@ namespace LeoBayController.CheckoutController
                 db.SaveChanges();
             }
         }
+
+        public void ConfirmPayment(int currentProductId)
+        {
+            using(var db = new LeoBayContext())
+            {
+                var order = db.Orders.Where(o => o.BuyerId == CurrentUser.Id).FirstOrDefault();
+                order.Sold = "Sold";
+                db.SaveChanges();
+            }
+            DeleteSoldItem(currentProductId);
+        }
+
+        public void DeleteSoldItem(int currentProductId)
+        {
+            using (var db = new LeoBayContext())
+            {
+                var products = db.Products.Where(p => p.ProductId == currentProductId).FirstOrDefault();
+                Console.WriteLine(products);
+                db.Remove(products);
+                db.SaveChanges();
+            }
+        }
     }
 }

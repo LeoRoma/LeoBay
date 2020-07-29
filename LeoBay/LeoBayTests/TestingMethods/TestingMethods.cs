@@ -9,6 +9,8 @@ namespace LeoBayTests
 {
     public class TestingMethods
     {
+
+        //Login
         public List<User> GetUser()
         {
             using (var db = new LeoBayContext())
@@ -72,7 +74,6 @@ namespace LeoBayTests
             using (var db = new LeoBayContext())
             {
                 var newProduct = db.Users.Where(u => u.UserId == 1).Include(p => p.Products).FirstOrDefault();
-;
 
                 newProduct.Products.Add(
                     new Product
@@ -88,5 +89,65 @@ namespace LeoBayTests
             }
         }
 
+        //Checkout
+
+        public void AddToCart()
+        {
+            using (var db = new LeoBayContext())
+            {
+                CurrentUser.Id = 1;
+                var user = db.Users.Where(u => u.UserId == CurrentUser.Id).FirstOrDefault();
+                var order = db.Orders;
+                db.Add(new Order { ProductId = 1, BuyerId = CurrentUser.Id, Date = DateTime.Now });
+                db.SaveChanges();
+                CurrentUser.Id = 0;
+            }
+        }
+
+        public List<Order> GetOrder()
+        {
+            using (var db = new LeoBayContext())
+            {
+                var orders = db.Orders.ToList();
+                return orders;
+            }
+        }
+
+        public void DeleteOrder()
+        {
+            using (var db = new LeoBayContext())
+            {
+                var orders = db.Orders.ToList();
+                orders.Reverse();
+                var lastOrder = orders[0];
+                db.Orders.Remove(lastOrder);
+                db.SaveChanges();
+            }
+        }
+
+        public void ConfirmPayment()
+        {
+            CurrentUser.Id = 1;
+            using (var db = new LeoBayContext())
+            {
+                var order = db.Orders.Where(o => o.BuyerId == CurrentUser.Id).FirstOrDefault();
+                order.Sold = "Sold";
+                db.SaveChanges();
+            }
+            CurrentUser.Id = 0;
+        }
+
+
+        public string GetCurrentOrder()
+        {
+            using (var db = new LeoBayContext())
+            {
+                var orders =
+                    (from product in db.Products
+                     join order in db.Orders on product.ProductId equals order.ProductId
+                     select order).FirstOrDefault();
+                return orders.Sold.ToString();
+            }
+        }
     }
 }

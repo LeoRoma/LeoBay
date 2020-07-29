@@ -62,12 +62,13 @@ namespace LeoBayView.ItemsManagerView
 
         private void ButtonAddToCart_Click(object sender, RoutedEventArgs e)
         {
-            int productId = _itemsManagerController.SelectedItem.ProductId;
+            int currentProductId = _itemsManagerController.SelectedItem.ProductId;
             string productName = _itemsManagerController.SelectedItem.ProductName;
             string price = _itemsManagerController.SelectedItem.Price.ToString();
-            _checkoutController.AddToCart(productId);
-            _shoppingCart.GetCheckoutItem(productName, price);
+            _checkoutController.AddToCart(currentProductId);
+            _shoppingCart.GetCheckoutItem(productName, price, currentProductId);
             _shoppingCart.PopulateCheckoutItem();
+            MessageBox.Show("Items added successfully to your cart!");
             _shoppingCart.Show();
         }
     }

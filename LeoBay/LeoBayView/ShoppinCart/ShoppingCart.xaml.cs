@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LeoBayController;
+using LeoBayController.CheckoutController;
 using LeoBayController.ItemsManagerController;
 using LeoBayModel;
 
@@ -21,7 +22,10 @@ namespace LeoBayView.ShoppinCart
     public partial class ShoppingCart : Window
     {
         private ItemsManagerController _itemsManagerController = new ItemsManagerController();
+        private CheckoutController _checkoutController = new CheckoutController();
         private Product _product = new Product();
+
+        private int _currentProductId;
         private string _name;
         private string _price;
         public ShoppingCart()
@@ -39,30 +43,36 @@ namespace LeoBayView.ShoppinCart
             }
         }
 
-        public void GetCheckoutItem(string productName, string price)
+        public void GetCheckoutItem(string productName, string price, int currentProductId)
         {
             SetCheckoutItemName(productName);
             SetCheckoutItemPrice(price);
+            SetCheckoutItemId(currentProductId);
         }
 
-        public string SetCheckoutItemName(string productName)
+        public void SetCheckoutItemName(string productName)
         {
             _name = productName;
-            return _name;
         }
 
-        public string SetCheckoutItemPrice(string price)
+        public void SetCheckoutItemPrice(string price)
         {
             _price = price;
-            return _price;
+        }
+
+        public void SetCheckoutItemId(int currentProductId)
+        {
+            _currentProductId = currentProductId;
         }
 
         private void ButtonConfirmPayment_Click(object sender, RoutedEventArgs e)
         {
             
-            if(AmounToPay.Text == _price)
+            if(AmountToPay.Text == _price)
             {
                 MessageBox.Show("Checkout complete");
+                _checkoutController.ConfirmPayment(_currentProductId);
+
             }
             MessageBox.Show("Please insert correct amount");
         }
