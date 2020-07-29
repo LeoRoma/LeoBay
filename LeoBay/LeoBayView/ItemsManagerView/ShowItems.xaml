@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="725">
     <Grid>
-        <ListView Margin="10" Name="AllItems">
+        <ListView Margin="10" Name="AllItems" SelectedItem="ListViewItem_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>

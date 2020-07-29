@@ -16,6 +16,7 @@ namespace LeoBayController.ItemsManagerController
 {
     public class ItemsManagerController
     {
+        public Product SelectedItem { get; set; }
         public void AddNewItem(string name, double price, string description, string image)
         {
             using (var db = new LeoBayContext())
@@ -86,6 +87,11 @@ namespace LeoBayController.ItemsManagerController
                 //}
                 return items;
             }
+        }
+
+        public void SetSelectedItem(object selectedItem)
+        {
+            selectedItem = (Product)SelectedItem;
         }
 
     }

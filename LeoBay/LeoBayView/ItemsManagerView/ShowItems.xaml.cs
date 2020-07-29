@@ -32,5 +32,13 @@ namespace LeoBayView.ItemsManagerView
         {
             AllItems.ItemsSource = _itemsManagerController.GetAllItems();
         }
+
+        public void ListViewItem_SelectionChanged(object sender, System.Windows.Controls.SelectedCellsChangedEventArgs e)
+        {
+            if(ListViewItem.SelectedEvent != null)
+            {
+                _itemsManagerController.SetSelectedItem(ListViewItem.SelectedEvent);
+            }
+        }
     }
 }

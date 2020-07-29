@@ -43,8 +43,11 @@ namespace LeoBayView.ItemsManagerView
 
             openFileDialog1.DefaultExt = ".png";
 
+            //Path of image
             TextBoxImage1.Text = openFileDialog1.FileName;
+            //Load image
             ImageSource imageSource = new BitmapImage(new Uri(TextBoxImage1.Text));
+            //Show image
             ImageBox1.Source = imageSource;
         }
 
