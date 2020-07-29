@@ -23,6 +23,6 @@
         <!--<ComboBox Height="23" HorizontalAlignment="Left" Margin="435,61,0,0" Name="cbImages" VerticalAlignment="Top" Width="140" SelectionChanged="cbImages_SelectionChanged" />-->
         <!--<Button Content="Show" Height="23" HorizontalAlignment="Left" Margin="583,61,0,0" Name="btnShow" VerticalAlignment="Top" Width="75" Click="btnShow_Click" />-->
         <Image x:Name="ImageBox1" Height="172" HorizontalAlignment="Left" Margin="118,241,0,0" Stretch="Fill" VerticalAlignment="Top" Width="248" />
-        <Image Height="167" HorizontalAlignment="Left" Margin="435,90,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="223" />
+        
     </Grid>
 </Window>

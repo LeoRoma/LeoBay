@@ -14,9 +14,7 @@ namespace LeoBayController
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello");
-            //AuthenticateUser("chris@gmail.com", "123");
         }
-
         public bool AuthenticateUser(string email, string password)
         {
             using (var db = new LeoBayContext())
@@ -49,15 +47,14 @@ namespace LeoBayController
 
         public void SetCurrentUser(int currentUserId, string currentFirstName, string currentLastName, string currentEmail)
         {
-            //CurrentUser currentUser = new CurrentUser()
-            //{
             CurrentUser.Id = currentUserId;
             CurrentUser.FirstName = currentFirstName;
             CurrentUser.LastName = currentLastName;
             CurrentUser.Email = currentEmail;
-            //};
+
             GetCurrentUser();
         }
+        
 
         public string GetCurrentUser()
         {
