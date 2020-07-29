@@ -72,6 +72,7 @@ namespace LeoBayView.ShoppinCart
             {
                 MessageBox.Show("Checkout complete");
                 _checkoutController.ConfirmPayment(_currentProductId);
+                this.Close();
 
             }
             MessageBox.Show("Please insert correct amount");
