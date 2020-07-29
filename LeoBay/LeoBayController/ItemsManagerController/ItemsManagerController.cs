@@ -89,9 +89,11 @@ namespace LeoBayController.ItemsManagerController
             }
         }
 
+
+
         public void SetSelectedItem(object selectedItem)
         {
-            selectedItem = (Product)SelectedItem;
+            SelectedItem = (Product)selectedItem;
         }
 
     }

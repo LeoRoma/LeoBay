@@ -17,6 +17,7 @@ using LeoBayController;
 using LeoBayView.ItemsManagerView;
 using LeoBayView.UserControls;
 using LeoBayModel;
+using LeoBayController.ItemsManagerController;
 
 namespace LeoBayView
 {
@@ -29,6 +30,7 @@ namespace LeoBayView
         private LoginView _loginView = new LoginView();
         private ShowItemsView _showItemsView = new ShowItemsView();
         private YourSpace _yourSpace = new YourSpace();
+        private ItemsManagerController _itemsManagerController = new ItemsManagerController();
 
         public MainWindow()
         {
@@ -53,7 +55,7 @@ namespace LeoBayView
 
         private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
         {
-            _showItemsView.GetAllItems();
+            _showItemsView.PopulateAllItems();
             Main.Content = _showItemsView;
         }
 
@@ -77,6 +79,11 @@ namespace LeoBayView
             CurrentUser.LastName = "";
             CurrentUser.Email = "";
         }
+
+        //public void SetSelectedProduct(object selectedItem)
+        //{
+        //    _itemsManagerController.SetSelectedItem(selectedItem);
+        //}
 
     }
 }

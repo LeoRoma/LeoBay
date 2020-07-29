@@ -8,35 +8,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LeoBayController;
 using LeoBayController.ItemsManagerController;
+using LeoBayModel;
 
-namespace LeoBayView.ItemsManagerView
+namespace LeoBayView.ShoppinCart
 {
     /// <summary>
-    /// Interaction logic for YourSpace.xaml
+    /// Interaction logic for ShoppingCart.xaml
     /// </summary>
-    public partial class YourSpace : UserControl
+    public partial class ShoppingCart : Window
     {
         private ItemsManagerController _itemsManagerController = new ItemsManagerController();
-        private AddItem _addItem = new AddItem();
-        public YourSpace()
+        private Product _product = new Product();
+        public ShoppingCart()
         {
             InitializeComponent();
-            GetCurrentItems();
+            //ShowItem();
         }
 
-        public void GetCurrentItems()
-        {
-            CurrentItems.ItemsSource = _itemsManagerController.GetCurrentUserItems();
-        }
-
-        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
-        {
-            
-            _addItem.Show();
-        }
+        //public void ShowItem()
+        //{
+        //    if (_itemsManagerController.SelectedItem != null)
+        //    {
+        //        DataContext = _itemsManagerController.ShowItemToCart();
+        //    }
+        //}
     }
 }

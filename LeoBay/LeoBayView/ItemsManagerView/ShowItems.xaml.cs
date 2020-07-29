@@ -1,7 +1,7 @@
-﻿using LeoBayController.ItemsManagerController;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,6 +13,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Drawing;
+using LeoBayModel;
+using LeoBayView.ShoppinCart;
+using LeoBayController.ItemsManagerController;
 
 namespace LeoBayView.ItemsManagerView
 {
@@ -21,24 +24,43 @@ namespace LeoBayView.ItemsManagerView
     /// </summary>
     public partial class ShowItemsView : UserControl
     {
+        
+        //private ShoppingCart _shoppingCart = new ShoppingCart();
+        public MainWindow _mainWindow = ((MainWindow)Application.Current.MainWindow);
         private ItemsManagerController _itemsManagerController = new ItemsManagerController();
         public ShowItemsView()
         {
             InitializeComponent();
-            GetAllItems();
+            PopulateAllItems();
+            PopulateItemFields();
         }
 
-        public void GetAllItems()
+        public void PopulateAllItems()
         {
             AllItems.ItemsSource = _itemsManagerController.GetAllItems();
         }
 
-        public void ListViewItem_SelectionChanged(object sender, System.Windows.Controls.SelectedCellsChangedEventArgs e)
+        public void ListBoxItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(ListViewItem.SelectedEvent != null)
+            if(AllItems.SelectedItem != null)
             {
-                _itemsManagerController.SetSelectedItem(ListViewItem.SelectedEvent);
+                //_mainWindow.SetSelectedProduct(AllItems.SelectedItem);
+                _itemsManagerController.SetSelectedItem(AllItems.SelectedItem);
+                PopulateItemFields();
             }
+        }
+
+        public void PopulateItemFields()
+        {
+            if (_itemsManagerController.SelectedItem != null)
+            {
+                ProductName.Text = _itemsManagerController.SelectedItem.ProductName;
+            }
+        }
+
+        private void ButtonAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
