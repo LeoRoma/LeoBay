@@ -30,9 +30,7 @@ namespace LeoBayView.ItemsManagerView
 
         public void GetAllItems()
         {
-            Console.WriteLine(_itemsManagerController.GetAllItems());
             AllItems.ItemsSource = _itemsManagerController.GetAllItems();
-
         }
     }
 }

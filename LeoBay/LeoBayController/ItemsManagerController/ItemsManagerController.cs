@@ -41,6 +41,15 @@ namespace LeoBayController.ItemsManagerController
         {
             using (var db = new LeoBayContext())
             {
+                //Stream StreamObj = new MemoryStream(result);
+
+                //BitmapImage BitObj = new BitmapImage();
+
+                //BitObj.BeginInit();
+
+                //BitObj.StreamSource = StreamObj;
+
+                //BitObj.EndInit();
                 //var items =
                 //    (from product in db.Products
                 //     join user in db.Users on product.SellerId equals user.UserId
