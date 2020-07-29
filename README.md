@@ -63,3 +63,22 @@ A user can post multiple items and can see them either in his own space or other
 **What can I improve**
 - I can avoid to implement "nice to have" features rather than MVP, because I have wasted a lot of time to research how to convert byte array in Image.
 - I need to understand how to test, and I need to ask help to a trainer.
+
+## Sprint 3
+**Goals**
+An user is able to add an item to buy, the item is going to be added in a purchase cart.
+An user can purchase the interested item.
+
+### Review
+- Completed sprint 3 and also the MVP
+- Need to work on Gui
+
+### Retro
+**What went well**
+- I have managed to complete the MVP of the program.
+- Also I have done a "nice to have", finally I could load an image.
+- After asking advice from Cathy I felt relieved.
+
+**What can I improve**
+- When the time is ticking very fast, I have to avoid to be an adventurer, KISS is always the best solution
+- I really like to overcomplicate myself and struggle.
