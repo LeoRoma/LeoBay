@@ -42,28 +42,7 @@ namespace LeoBayController.ItemsManagerController
         {
             using (var db = new LeoBayContext())
             {
-                //Stream StreamObj = new MemoryStream(result);
-
-                //BitmapImage BitObj = new BitmapImage();
-
-                //BitObj.BeginInit();
-
-                //BitObj.StreamSource = StreamObj;
-
-                //BitObj.EndInit();
-                //var items =
-                //    (from product in db.Products
-                //     join user in db.Users on product.SellerId equals user.UserId
-                //     select new { ProductName = product.ProductName, Description = product.Description, ImageByte = product.ImageData, Price = product.Price }).ToList();
                 var items = db.Products.Where(p => p.SellerId == p.User.UserId).ToList();
-
-                //foreach (var item in items)
-                //{
-
-                //    byte[] img = (byte[])item.ImageByte;
-                //    Bitma
-
-                //}
                 return items;
             }
         }
@@ -72,19 +51,7 @@ namespace LeoBayController.ItemsManagerController
         {
             using (var db = new LeoBayContext())
             {
-                //var items =
-                //    (from product in db.Products
-                //     join user in db.Users on product.SellerId equals user.UserId
-                //     select new { ProductName = product.ProductName, Description = product.Description, ImageByte = product.ImageData, Price = product.Price }).ToList();
                 var items = db.Products.Where(p => p.SellerId == CurrentUser.Id).ToList();
-
-                //foreach (var item in items)
-                //{
-
-                //    byte[] img = (byte[])item.ImageByte;
-                //    Bitma
-
-                //}
                 return items;
             }
         }

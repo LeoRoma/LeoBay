@@ -33,7 +33,7 @@ namespace LeoBayView.ItemsManagerView
             CurrentItems.ItemsSource = _itemsManagerController.GetCurrentUserItems();
         }
 
-        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        public void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
             
             _addItem.Show();

@@ -45,9 +45,6 @@
                     <Button x:Name="ButtonYourSpace" Margin="0,10,0,10" Click="ButtonYourSpace_Click">
                         Your Space
                     </Button>
-                    <Button>
-                        Cart
-                    </Button>
                     <Button x:Name="ButtonLogout" Click="ButtonLogout_Click" Margin="0,10,0,10"
                             Content="Logout"/>
                 </StackPanel>
@@ -57,7 +54,7 @@
                 <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>-->
-                <Frame x:Name="Main" NavigationUIVisibility="Hidden"></Frame>
+                <Frame x:Name="Main" NavigationUIVisibility="Hidden" Navigated="Main_Navigated"></Frame>
 
             </Grid>
         </Grid>

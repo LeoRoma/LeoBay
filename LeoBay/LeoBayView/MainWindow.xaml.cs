@@ -18,6 +18,7 @@ using LeoBayView.ItemsManagerView;
 using LeoBayView.UserControls;
 using LeoBayModel;
 using LeoBayController.ItemsManagerController;
+using LeoBayView.ShoppinCart;
 
 namespace LeoBayView
 {
@@ -78,6 +79,11 @@ namespace LeoBayView
             CurrentUser.FirstName = "";
             CurrentUser.LastName = "";
             CurrentUser.Email = "";
+        }
+
+        private void Main_Navigated(object sender, NavigationEventArgs e)
+        {
+
         }
 
         //public void SetSelectedProduct(object selectedItem)

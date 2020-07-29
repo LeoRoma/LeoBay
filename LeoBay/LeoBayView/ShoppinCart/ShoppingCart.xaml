@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="ShoppingCart" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel x:Name = "Display">
+            <StackPanel Orientation = "Horizontal" Margin = "50, 50, 0, 0">
+                <TextBox x:Name="ProductName" Width="100"/>
+                <TextBox x:Name="Price" Width="100"/>
+            </StackPanel>
+        </StackPanel>
 
     </Grid>
 </Window>

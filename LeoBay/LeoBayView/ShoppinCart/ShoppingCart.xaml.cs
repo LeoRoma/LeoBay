@@ -22,18 +22,40 @@ namespace LeoBayView.ShoppinCart
     {
         private ItemsManagerController _itemsManagerController = new ItemsManagerController();
         private Product _product = new Product();
+        private string _name;
+        private string _price;
         public ShoppingCart()
         {
             InitializeComponent();
-            //ShowItem();
+            PopulateCheckoutItem();
         }
 
-        //public void ShowItem()
-        //{
-        //    if (_itemsManagerController.SelectedItem != null)
-        //    {
-        //        DataContext = _itemsManagerController.ShowItemToCart();
-        //    }
-        //}
+        public void PopulateCheckoutItem()
+        {
+            if (_name != null && _price != null)
+            {
+                ProductName.Text = _name;
+                Price.Text = _price;
+            }
+        }
+
+        public void GetCheckoutItem(string productName, string price)
+        {
+            SetCheckoutItemName(productName);
+            SetCheckoutItemPrice(price);
+        }
+
+        public string SetCheckoutItemName(string productName)
+        {
+            _name = productName;
+            return _name;
+        }
+
+        public string SetCheckoutItemPrice(string price)
+        {
+            _price = price;
+            return _price;
+        }
+
     }
 }

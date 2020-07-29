@@ -24,9 +24,8 @@ namespace LeoBayView.ItemsManagerView
     /// </summary>
     public partial class ShowItemsView : UserControl
     {
-        
-        //private ShoppingCart _shoppingCart = new ShoppingCart();
-        public MainWindow _mainWindow = ((MainWindow)Application.Current.MainWindow);
+        private ShoppingCart _shoppingCart = new ShoppingCart();
+        //public MainWindow _mainWindow = ((MainWindow)Application.Current.MainWindow);
         private ItemsManagerController _itemsManagerController = new ItemsManagerController();
         public ShowItemsView()
         {
@@ -55,12 +54,17 @@ namespace LeoBayView.ItemsManagerView
             if (_itemsManagerController.SelectedItem != null)
             {
                 ProductName.Text = _itemsManagerController.SelectedItem.ProductName;
+                Price.Text = _itemsManagerController.SelectedItem.Price.ToString();
             }
         }
 
         private void ButtonAddToCart_Click(object sender, RoutedEventArgs e)
         {
-
+            string productName = _itemsManagerController.SelectedItem.ProductName;
+            string price = _itemsManagerController.SelectedItem.Price.ToString();
+            _shoppingCart.GetCheckoutItem(productName, price);
+            _shoppingCart.PopulateCheckoutItem();
+            _shoppingCart.Show();
         }
     }
 }
