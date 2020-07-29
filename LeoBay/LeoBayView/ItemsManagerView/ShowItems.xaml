@@ -19,7 +19,8 @@
                         <TextBlock Text="Description: " />
                         <TextBlock Text="{Binding Description}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
                         <TextBlock Text="Image: " />
-                        <TextBlock x:Name="ImageBox" Text="{Binding ImageData}" />
+                        <Image Source="{Binding ImageData}" Height="50" HorizontalAlignment="Left" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="50" />
+                        <!--<TextBlock x:Name="ImageBox" Text="{Binding ImageData}" />-->
                     </WrapPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
