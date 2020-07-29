@@ -14,17 +14,14 @@
             <!--Navigation Panel Top-->
             <Grid x:Name="nav_panel_top"  Background="#2E333A"
                   VerticalAlignment="Top"
-                  Height="65">
+                  Height="75">
                 <Label x:Name="Header" Content="LeoBay" Grid.Row="0" FontSize="35" HorizontalAlignment="Center" />
-                <StackPanel x:Name="stack_panel_top">
-                    <Button x:Name="ButtonRegister" Margin="0,10,0,10" Click="ButtonRegister_Click" 
-                            VerticalAlignment="Center" HorizontalAlignment="Right">
-                        Register
-                    </Button>
+                <StackPanel x:Name="stack_panel_top" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <Button x:Name="ButtonLogin" Margin="0,10,0,10" Click="ButtonLogin_Click" 
-                            VerticalAlignment="Center" HorizontalAlignment="Right">
-                        Login
-                    </Button>
+                            VerticalAlignment="Center" HorizontalAlignment="Right" Content="Login"/>
+                    <Button x:Name="ButtonRegister" Click="ButtonRegister_Click" VerticalAlignment="Center" HorizontalAlignment="Right"
+                            Content="Register"/>
+
                 </StackPanel>
             </Grid>
             <!--Navigation Panel Left-->
@@ -40,28 +37,28 @@
                     <Button x:Name="ButtonHome" Margin="0,10,0,10" Click="ButtonHome_Click">
                         Home
                     </Button>
-                    <!--<Button x:Name="ButtonRegister" Margin="0,10,0,10" Click="ButtonRegisterClick">
-                        Register
-                    </Button>-->
+                
 
-                    <Button>
+                    <Button x:Name="ButtonShowItems" Margin="0,10,0,10" Click="ButtonShowItems_Click">
                         Items
                     </Button>
-                    <Button>
+                    <Button x:Name="ButtonYourSpace" Margin="0,10,0,10" Click="ButtonYourSpace_Click">
                         Your Space
                     </Button>
                     <Button>
                         Cart
                     </Button>
+                    <Button x:Name="ButtonLogout" Click="ButtonLogout_Click" Margin="0,10,0,10"
+                            Content="Logout"/>
                 </StackPanel>
 
             </Grid>
-            <Grid Width="725" Height="501" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Grid.ColumnDefinitions>
+            <Grid Width="725" Height="510" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>-->
                 <Frame x:Name="Main" NavigationUIVisibility="Hidden"></Frame>
-                
+
             </Grid>
         </Grid>
 

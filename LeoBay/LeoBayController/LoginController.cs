@@ -10,7 +10,6 @@ namespace LeoBayController
 {
     public class LoginController
     {
-        private CurrentUser _currentUser = new CurrentUser();
         private Encryption _encryption = new Encryption();
         public static void Main(string[] args)
         {
@@ -42,7 +41,7 @@ namespace LeoBayController
                     string currentEmail = details.FirstOrDefault().Email;
                     SetCurrentUser(currentUserId, currentFirstName, currentLastName, currentEmail);
                     return true;
-                    
+
                 }
                 return false;
             }
@@ -52,19 +51,19 @@ namespace LeoBayController
         {
             //CurrentUser currentUser = new CurrentUser()
             //{
-            _currentUser.CurrentUserId = currentUserId;
-            _currentUser.CurrentFirstName = currentFirstName;
-            _currentUser.CurrentLastName = currentLastName;
-            _currentUser.CurrentEmail = currentEmail;
+            CurrentUser.Id = currentUserId;
+            CurrentUser.FirstName = currentFirstName;
+            CurrentUser.LastName = currentLastName;
+            CurrentUser.Email = currentEmail;
             //};
             GetCurrentUser();
         }
 
         public string GetCurrentUser()
         {
-            return $"Welcome To LeoBay {_currentUser.CurrentFirstName} {_currentUser.CurrentLastName}";
+            return $"Welcome To LeoBay {CurrentUser.FirstName} {CurrentUser.LastName}";
         }
 
-        
+
     }
 }

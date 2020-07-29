@@ -11,8 +11,9 @@ namespace LeoBayModel
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         public int BuyerId { get; set; }
-        
+
         public User User { get; set; }
+
         public string Sold { get; set; }
         public DateTime Date { get; set; }
         [DataType(DataType.Date)]

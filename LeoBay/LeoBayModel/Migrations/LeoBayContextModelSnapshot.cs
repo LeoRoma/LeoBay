@@ -64,7 +64,7 @@ namespace LeoBayModel.Migrations
                     b.Property<byte[]>("ImageData")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<int>("OrderId")
+                    b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<double>("Price")
@@ -75,7 +75,8 @@ namespace LeoBayModel.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SellerId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(16);
 
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
@@ -86,7 +87,7 @@ namespace LeoBayModel.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("LeoBayModel.User", b =>
@@ -127,9 +128,7 @@ namespace LeoBayModel.Migrations
                 {
                     b.HasOne("LeoBayModel.Order", "Order")
                         .WithMany("Prodcuts")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OrderId");
 
                     b.HasOne("LeoBayModel.User", "User")
                         .WithMany("Products")

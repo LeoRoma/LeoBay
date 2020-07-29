@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeoBayModel.Migrations
 {
     [DbContext(typeof(LeoBayContext))]
-    [Migration("20200727135341_OrderProductRelationChanged")]
-    partial class OrderProductRelationChanged
+    [Migration("20200728233511_ChangingProduct")]
+    partial class ChangingProduct
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,8 +45,6 @@ namespace LeoBayModel.Migrations
 
                     b.HasKey("OrderId");
 
-                    b.HasIndex("ProductId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Orders");
@@ -68,7 +66,7 @@ namespace LeoBayModel.Migrations
                     b.Property<byte[]>("ImageData")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<int>("OrderId")
+                    b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<double>("Price")
@@ -79,16 +77,19 @@ namespace LeoBayModel.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SellerId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(16);
 
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("ProductId");
 
+                    b.HasIndex("OrderId");
+
                     b.HasIndex("UserId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("LeoBayModel.User", b =>
@@ -120,12 +121,6 @@ namespace LeoBayModel.Migrations
 
             modelBuilder.Entity("LeoBayModel.Order", b =>
                 {
-                    b.HasOne("LeoBayModel.Product", "Product")
-                        .WithMany("Orders")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("LeoBayModel.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId");
@@ -133,6 +128,10 @@ namespace LeoBayModel.Migrations
 
             modelBuilder.Entity("LeoBayModel.Product", b =>
                 {
+                    b.HasOne("LeoBayModel.Order", "Order")
+                        .WithMany("Prodcuts")
+                        .HasForeignKey("OrderId");
+
                     b.HasOne("LeoBayModel.User", "User")
                         .WithMany("Products")
                         .HasForeignKey("UserId");

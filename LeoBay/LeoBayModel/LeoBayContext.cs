@@ -9,7 +9,7 @@ namespace LeoBayModel
     { 
         public DbSet<User> Users { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Product> Product { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=LeoBay;");
