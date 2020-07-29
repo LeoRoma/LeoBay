@@ -45,3 +45,21 @@ Set-up:
 **What went wrong**
 - Not having a full grasp with EntityFramework I have struggled to understand how to update my migration after I have changed my Model.
 - I had to re-setup my project from scratch
+
+## Sprint 2
+**Goals**
+A user is able to Signup, Signin and Signout.
+Encyrpted password to raise the security level of privacy.
+A user can post multiple items and can see them either in his own space or other users.
+
+### Review
+- The user can store an image into the database but can't show it when the items are listed
+- The UI is not the maximum of the perfomance, needs to implement redirect after the user registered or logged in.
+
+### Retro
+**What went well**
+- I have managed to complete my sprint.
+
+**What can I improve**
+- I can avoid to implement "nice to have" features rather than MVP, because I have wasted a lot of time to research how to convert byte array in Image.
+- I need to understand how to test, and I need to ask help to a trainer.
