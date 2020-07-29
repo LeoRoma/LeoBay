@@ -67,7 +67,7 @@ namespace LeoBayTests
             }
         }
 
-        public void AddNewItem(string name, double price, string description, byte[] image)
+        public void AddNewItem(string name, double price, string description, string image)
         {
             using (var db = new LeoBayContext())
             {

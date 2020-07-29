@@ -16,11 +16,11 @@ namespace LeoBayTests.ItemsManagerTests
         [Test]
         public void AddNewItem()
         {
-            byte[] arr1 = { 0, 100, 120, 210, 255 };
+         
             //arrange
             var count = _itemsManagerController.GetAllItems().Count;
             // act
-            _testingMethods.AddNewItem(name:"Guitar", price:50, description:"2 years old", arr1);
+            _testingMethods.AddNewItem(name:"Guitar", price:50, description:"2 years old", "guitar");
             // assert
             var newCount = _itemsManagerController.GetAllItems().Count;
             Assert.AreEqual(count + 1, newCount);

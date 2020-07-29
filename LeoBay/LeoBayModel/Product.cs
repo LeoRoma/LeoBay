@@ -14,8 +14,8 @@ namespace LeoBayModel
         public double Price { get; set; }
         public string Description { get; set; }
 
-        public byte[] ImageData { get; set; }
-        [MaxLength(16)]
+        public string ImageData { get; set; }
+
         public int SellerId { get; set; }
         public int? OrderId { get; set; }
         public DateTime Date { get; set; }

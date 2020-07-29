@@ -16,6 +16,7 @@ using System.Drawing;
 using LeoBayModel;
 using LeoBayView.ShoppinCart;
 using LeoBayController.ItemsManagerController;
+using LeoBayController.CheckoutController;
 
 namespace LeoBayView.ItemsManagerView
 {
@@ -25,6 +26,7 @@ namespace LeoBayView.ItemsManagerView
     public partial class ShowItemsView : UserControl
     {
         private ShoppingCart _shoppingCart = new ShoppingCart();
+        private CheckoutController _checkoutController = new CheckoutController();
         //public MainWindow _mainWindow = ((MainWindow)Application.Current.MainWindow);
         private ItemsManagerController _itemsManagerController = new ItemsManagerController();
         public ShowItemsView()
@@ -60,8 +62,10 @@ namespace LeoBayView.ItemsManagerView
 
         private void ButtonAddToCart_Click(object sender, RoutedEventArgs e)
         {
+            int productId = _itemsManagerController.SelectedItem.ProductId;
             string productName = _itemsManagerController.SelectedItem.ProductName;
             string price = _itemsManagerController.SelectedItem.Price.ToString();
+            _checkoutController.AddToCart(productId);
             _shoppingCart.GetCheckoutItem(productName, price);
             _shoppingCart.PopulateCheckoutItem();
             _shoppingCart.Show();

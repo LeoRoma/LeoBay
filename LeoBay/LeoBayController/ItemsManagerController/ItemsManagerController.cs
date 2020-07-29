@@ -22,15 +22,13 @@ namespace LeoBayController.ItemsManagerController
             using (var db = new LeoBayContext())
             {
                 var newProduct = db.Users.Where(u => u.UserId == CurrentUser.Id).Include(p => p.Products).FirstOrDefault();
-                byte[] imageToByte = File.ReadAllBytes(image);
-
                 newProduct.Products.Add(
                     new Product
                     {
                         ProductName = name,
                         Price = price,
                         Description = description,
-                        ImageData = imageToByte,
+                        ImageData = image,
                         SellerId = CurrentUser.Id,
                         Date = DateTime.Now
                     });
