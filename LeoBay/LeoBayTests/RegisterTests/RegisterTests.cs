@@ -35,7 +35,7 @@ namespace LeoBayTests
         [Test]
         public void AuthenticateLoggingUser()
         {
-            var actual = _testingMethods.AuthenticateUser("alex@gmail.com", "123");
+            var actual = _testingMethods.AuthenticateUser("marco@gmail.com", "123");
             var result = true;
             Assert.AreEqual(result, actual);
         }

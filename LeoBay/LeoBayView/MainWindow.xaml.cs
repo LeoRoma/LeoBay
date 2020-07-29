@@ -47,11 +47,13 @@ namespace LeoBayView
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
+            
             Main.Content = _loginView;
         }
 
         private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
         {
+            _showItemsView.GetAllItems();
             Main.Content = _showItemsView;
         }
 
