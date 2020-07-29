@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LeoBayController;
+using LeoBayController.CheckoutController;
 using LeoBayController.ItemsManagerController;
 using LeoBayModel;
 
@@ -21,6 +22,7 @@ namespace LeoBayView.ShoppinCart
     public partial class ShoppingCart : Window
     {
         private ItemsManagerController _itemsManagerController = new ItemsManagerController();
+        private CheckoutController _checkoutController = new CheckoutController();
         private Product _product = new Product();
         private string _name;
         private string _price;
@@ -60,9 +62,11 @@ namespace LeoBayView.ShoppinCart
         private void ButtonConfirmPayment_Click(object sender, RoutedEventArgs e)
         {
             
-            if(AmounToPay.Text == _price)
+            if(AmountToPay.Text == _price)
             {
                 MessageBox.Show("Checkout complete");
+                _checkoutController.ConfirmPayment();
+
             }
             MessageBox.Show("Please insert correct amount");
         }

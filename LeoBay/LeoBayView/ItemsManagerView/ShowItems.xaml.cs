@@ -68,6 +68,7 @@ namespace LeoBayView.ItemsManagerView
             _checkoutController.AddToCart(productId);
             _shoppingCart.GetCheckoutItem(productName, price);
             _shoppingCart.PopulateCheckoutItem();
+            MessageBox.Show("Items added successfully to your cart!");
             _shoppingCart.Show();
         }
     }
