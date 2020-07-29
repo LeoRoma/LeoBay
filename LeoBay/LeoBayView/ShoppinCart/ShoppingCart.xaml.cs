@@ -57,5 +57,14 @@ namespace LeoBayView.ShoppinCart
             return _price;
         }
 
+        private void ButtonConfirmPayment_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if(AmounToPay.Text == _price)
+            {
+                MessageBox.Show("Checkout complete");
+            }
+            MessageBox.Show("Please insert correct amount");
+        }
     }
 }
