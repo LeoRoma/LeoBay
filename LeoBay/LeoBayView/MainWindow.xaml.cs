@@ -28,7 +28,7 @@ namespace LeoBayView
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private RegisterView _registerView = new RegisterView();
+        private RegisterView _registerView = new RegisterView();
         private LoginView _loginView = new LoginView();
         private ShowItemsView _showItemsView = new ShowItemsView();
         private YourSpace _yourSpace = new YourSpace();
@@ -46,7 +46,7 @@ namespace LeoBayView
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
-            //Main.Content = _registerView;
+            _registerView.Show();
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)

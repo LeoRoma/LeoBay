@@ -49,6 +49,7 @@ namespace LeoBayView.UserRegisterView
                 {
                     string welcomeMessage = _loginController.GetCurrentUser();
                     MessageBox.Show(welcomeMessage);
+                    Reset();
                     this.Close();
                 }
                 else
@@ -57,6 +58,12 @@ namespace LeoBayView.UserRegisterView
                 }
 
             }
+        }
+
+        public void Reset()
+        {
+            TextBoxEmail.Text = "";
+            passwordBox1.Password = "";
         }
 
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
