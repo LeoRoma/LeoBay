@@ -15,7 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LeoBayController;
 using LeoBayView.ItemsManagerView;
-using LeoBayView.UserControls;
+//using LeoBayView.UserControls;
+using LeoBayView.UserRegisterView;
 using LeoBayModel;
 using LeoBayController.ItemsManagerController;
 using LeoBayView.ShoppinCart;
@@ -27,7 +28,7 @@ namespace LeoBayView
     /// </summary>
     public partial class MainWindow : Window
     {
-        private RegisterView _registerView = new RegisterView();
+        //private RegisterView _registerView = new RegisterView();
         private LoginView _loginView = new LoginView();
         private ShowItemsView _showItemsView = new ShowItemsView();
         private YourSpace _yourSpace = new YourSpace();
@@ -45,13 +46,13 @@ namespace LeoBayView
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = _registerView;
+            //Main.Content = _registerView;
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            
-            Main.Content = _loginView;
+
+            _loginView.Show();
         }
 
         private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
