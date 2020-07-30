@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LeoBayView.ItemsManagerView"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="725">
+             d:DesignHeight="450" d:DesignWidth="725" Language="en-GB">
     <Grid>
 
         <ScrollViewer Grid.Column="1" Grid.Row="1" Background="#FFF1F1F1">
@@ -27,7 +27,7 @@
                                 <GridViewColumn Header="Price" Width="130">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Price, StringFormat={}{0:G}}" FontWeight="Black" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{Binding Price, StringFormat={}{0:C}}" FontWeight="Black" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
