@@ -67,15 +67,15 @@ namespace LeoBayView.ShoppinCart
 
         private void ButtonConfirmPayment_Click(object sender, RoutedEventArgs e)
         {
-            
-            if(AmountToPay.Text == _price)
-            {
-                MessageBox.Show("Checkout complete");
-                _checkoutController.ConfirmPayment(_currentProductId);
-                this.Close();
 
-            }
-            MessageBox.Show("Please insert correct amount");
+            MessageBox.Show("Checkout complete");
+            _checkoutController.ConfirmPayment(_currentProductId);
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
