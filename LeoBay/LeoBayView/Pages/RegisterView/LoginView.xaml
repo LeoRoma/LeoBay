@@ -27,17 +27,20 @@
         <Grid VerticalAlignment="Bottom" Margin="50,80" Height="270">
             <Label Content="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="Gray" FontSize="18"/>
             <StackPanel VerticalAlignment="Center" Margin="15,0,15,0" Height="128">
-                <TextBlock x:Name="TextBlockEmail" Text="Email" Height="19" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="TextBlockEmail" Text="Email" Height="19" Width="30" />
                 <TextBox x:Name="TextBoxEmail" Margin="0,10" Width="200" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
                 <TextBlock x:Name="TextBlockPassword" Height="19" Text="Password" Width="50"/>
                 <PasswordBox x:Name="passwordBox1" Margin="0,10" Width="200" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
             </StackPanel>
         </Grid>
-        <Button x:Name="ButtonLogin" Width="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,352,0,0" Content="LOGIN" Click="ButtonLogin_Click" />
-        <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" Foreground="Gray" Cursor="Hand"/>
-        <TextBlock Height="23" HorizontalAlignment="Center" x:Name ="ErrorMessage" VerticalAlignment="Top" Width="200" Margin="0,409,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
-        <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"></Frame>
-
+        <Button x:Name="ButtonLogin" Width="150" Height="30" HorizontalAlignment="Center" Margin="0,252,0,0" Content="LOGIN" Click="ButtonLogin_Click" />
+        
+        <TextBlock Height="23" HorizontalAlignment="Center" x:Name ="ErrorMessage" Width="200" Margin="0,180,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
+        <TextBlock Text="Not registered yet?" Margin="648,302,38,123" Height="25" Foreground="Gray" Cursor="Hand"/>
+        <TextBlock Width="150" Height="25" Margin="648,338,2,86">  
+                 <Hyperlink Click="ButtonClickHere_Click" FontSize="14" FontStyle="Normal">Click Here</Hyperlink>
+        </TextBlock>
+        <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"/>
     </Grid>
-    
+
 </Page>

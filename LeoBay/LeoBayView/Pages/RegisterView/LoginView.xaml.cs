@@ -67,9 +67,10 @@ namespace LeoBayView.Pages.RegisterView
             passwordBox1.Password = "";
         }
 
-        private void buttonRegister_Click(object sender, RoutedEventArgs e)
+        private void ButtonClickHere_Click(object sender, RoutedEventArgs e)
         {
-            //_mainWindow.Main.Content = _registerView;
+            FrameMain.Navigate(new RegisterView());
         }
+
     }
 }

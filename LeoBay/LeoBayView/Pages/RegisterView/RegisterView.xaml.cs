@@ -69,6 +69,7 @@ namespace LeoBayView.Pages.RegisterView
                     _registerController.CreateNewUser(firstName, lastName, email, password);
                     ErrorMessage.Text = "You have Registered successfully.";
                     Reset();
+                    FrameMain.Navigate(new MainWindow());
                 }
             }
         }
