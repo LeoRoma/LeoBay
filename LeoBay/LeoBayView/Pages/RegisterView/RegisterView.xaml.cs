@@ -88,9 +88,11 @@ namespace LeoBayView.Pages.RegisterView
         }
 
 
-        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        private void ButtonClickHere_Click(object sender, RoutedEventArgs e)
         {
-            //_mainWindow.Main.Content = _loginView;
+            FrameMain.Navigate(new LoginView());
         }
+
+
     }
 }

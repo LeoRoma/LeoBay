@@ -45,9 +45,9 @@
             <TextBlock Width="150" Height="25" Margin="530,200,0,10">  
                  <Hyperlink Click="ButtonClickHere_Click" FontSize="14" FontStyle="Normal">Click Here to Login</Hyperlink>
             </TextBlock>
-            
 
+            
         </Grid>
-        <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden" Navigated="FrameMain_Navigated"></Frame>
+        <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Page>
