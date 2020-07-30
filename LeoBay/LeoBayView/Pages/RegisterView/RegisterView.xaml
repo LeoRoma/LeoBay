@@ -18,7 +18,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="REGISTRATION" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="Black" FontSize="18"/>
+        <Label Content="REGISTRATION" Height="30" HorizontalAlignment="Center" Margin="0,0,0,300" Foreground="White" FontSize="18"/>
 
         <!--end Button as a Link button using style-->
         <Grid Margin="76,0,49,0" Background="White" Height="234" VerticalAlignment="Center">
@@ -26,7 +26,7 @@
                 <RowDefinition Height="252*" />
                 <!--   <RowDefinition Height="12*" />-->
             </Grid.RowDefinitions>
-            <TextBlock Height="20" x:Name="ErrorMessage" Margin="10,175,0,0"  Width="167"  OpacityMask="Crimson" Foreground="#FFE5572C" RenderTransformOrigin="0.445,4.052" />
+            <TextBlock Height="20" x:Name="ErrorMessage" Margin="0,165,200,0"  Width="167"  OpacityMask="Crimson" Foreground="#FFE5572C" RenderTransformOrigin="0.445,4.052" />
             <TextBlock Height="23" x:Name="TextBlockFirstname" Margin="171,55,394,156" Text="First Name:" Width="110" />
             <TextBlock Height="23" x:Name="TextBlockLastName" Margin="171,78,394,133" Text="Last Name:" Width="110" />
             <TextBlock Height="23" x:Name="TextBlockEmailId" Margin="171,101,394,110" Text="Email" Width="110" />
@@ -41,8 +41,13 @@
             <PasswordBox x:Name="PasswordBoxConfirm" Height="23" Margin="286,124,189,87" Width="200" />
             <Button x:Name="ButtonSubmit" Content="Submit" Height="23" Margin="338,188,267,23" Width="70" Click="ButtonSubmit_Click" />
             <Button x:Name="ButtonReset" Content="Reset" Height="23" Margin="416,188,189,23" Width="70" Click="ButtonReset_Click" />
-            <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"></Frame>
+            <TextBlock Text="Already registered?" Margin="530,150,40,0" Width="110" Height="25" Foreground="Gray" Cursor="Hand"/>
+            <TextBlock Width="150" Height="25" Margin="530,200,0,10">  
+                 <Hyperlink Click="ButtonClickHere_Click" FontSize="14" FontStyle="Normal">Click Here to Login</Hyperlink>
+            </TextBlock>
+            
 
         </Grid>
+        <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden" Navigated="FrameMain_Navigated"></Frame>
     </Grid>
 </Page>
