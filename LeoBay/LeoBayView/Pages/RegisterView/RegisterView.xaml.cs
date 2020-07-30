@@ -8,16 +8,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using LeoBayController;
 
-namespace LeoBayView.UserRegisterView
+namespace LeoBayView.Pages.RegisterView
 {
     /// <summary>
     /// Interaction logic for RegisterView.xaml
     /// </summary>
-    public partial class RegisterView : Window
+    public partial class RegisterView : Page
     {
         private RegisterController _registerController = new RegisterController();
         //private MainWindow _mainWindow = new MainWindow();
@@ -68,7 +69,6 @@ namespace LeoBayView.UserRegisterView
                     _registerController.CreateNewUser(firstName, lastName, email, password);
                     ErrorMessage.Text = "You have Registered successfully.";
                     Reset();
-                    this.Close();
                 }
             }
         }

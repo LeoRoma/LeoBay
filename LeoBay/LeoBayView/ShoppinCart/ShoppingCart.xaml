@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ShoppingCart" Height="350" Width="600" Language="en-GB">
     <Grid>
-        <Rectangle Height="350" VerticalAlignment="Top">
+        <Rectangle Height="50" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF2281D1"/>
@@ -25,8 +25,8 @@
         <TextBox x:Name="Description" Width="200" Height="25" FontSize="18" Margin="266,105,34,104" Foreground="#FF6A6A6A"/>
         <TextBox x:Name="Price" Width="200" Height="25" FontSize="18" Margin="266,146,34,63" Foreground="#FF6A6A6A"/>
         <Button Background="#FF4572A0" Width="200" Height="25" BorderBrush="#FF4572A0" Content="SHOP NOW" Click="ButtonConfirmPayment_Click" Margin="266,185,34,24"/>
-        <Image Source="{Binding ImageData}" Height="143" HorizontalAlignment="Left" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="207" Margin="58,113,0,0" />
-
+        <Image Source="{Binding buttonImage}" x:Name="Image"  Height="143" HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top" Width="207" Margin="58,113,0,0">
+        </Image> 
 
 
     </Grid>

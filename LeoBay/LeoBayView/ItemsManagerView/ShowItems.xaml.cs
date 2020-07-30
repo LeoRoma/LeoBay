@@ -66,8 +66,11 @@ namespace LeoBayView.ItemsManagerView
             int currentProductId = _itemsManagerController.SelectedItem.ProductId;
             string productName = _itemsManagerController.SelectedItem.ProductName;
             string price = _itemsManagerController.SelectedItem.Price.ToString();
-            _checkoutController.AddToCart(currentProductId);
-            _shoppingCart.GetCheckoutItem(productName, price, currentProductId);
+            string image = _itemsManagerController.SelectedItem.ImageData;
+            string description = _itemsManagerController.SelectedItem.Description;
+            CurrentUser.Image = image;
+            //_checkoutController.AddToCart(currentProductId);
+            _shoppingCart.GetCheckoutItem(productName, price, currentProductId, description);
             _shoppingCart.PopulateCheckoutItem();
             MessageBox.Show("Items added successfully to your cart!");
             _shoppingCart.Show();

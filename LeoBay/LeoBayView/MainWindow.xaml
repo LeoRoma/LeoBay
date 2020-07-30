@@ -41,7 +41,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Frame x:Name="Main" NavigationUIVisibility="Hidden" Navigated="Main_Navigated"></Frame>
+            <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden" Navigated="Main_Navigated"></Frame>
 
         </Grid>
     </Grid>

@@ -13,13 +13,14 @@ using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using LeoBayController;
 using LeoBayModel;
+using LeoBayView.ItemsManagerView;
 
-namespace LeoBayView.UserRegisterView
+namespace LeoBayView.Pages.RegisterView
 {
     /// <summary>
     /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class LoginView : Window
+    public partial class LoginView : Page
     {
         private LoginController _loginController = new LoginController();
         public LoginView()
@@ -49,9 +50,9 @@ namespace LeoBayView.UserRegisterView
                 {
                     string welcomeMessage = _loginController.GetCurrentUser();
                     MessageBox.Show(welcomeMessage);
+                    FrameMain.Navigate(new ShowItemsView());
                     Reset();
-                    Hide();
-                }   
+                }
                 else
                 {
                     ErrorMessage.Text = "Sorry! Please enter existing emailid/password.";
