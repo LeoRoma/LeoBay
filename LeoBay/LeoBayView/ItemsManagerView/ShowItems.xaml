@@ -7,33 +7,60 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="725">
     <Grid>
-        <ListBox Margin="10" x:Name="AllItems" SelectionChanged="ListBoxItem_SelectionChanged" Width="400" Height="300">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="Name: " />
-                        <TextBlock Text="{Binding ProductName}" FontWeight="Bold" />
-                        <TextBlock Text=", " />
-                        <TextBlock Text="Price: £" />
-                        <TextBlock Text="{Binding Price}" FontWeight="Bold" />
-                        <TextBlock Text="Description: " />
-                        <TextBlock Text="{Binding Description}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
-                        <TextBlock Text="Image: " />
-                        <Image Source="{Binding ImageData}" Height="50" HorizontalAlignment="Left" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="50" />
-                        <!--<TextBlock x:Name="ImageBox" Text="{Binding ImageData}" />-->
-                    </WrapPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <StackPanel Name = "Display">
-            <StackPanel Orientation = "Horizontal" Margin = "50, 50, 0, 0">
-                <TextBox x:Name="ProductName" Width="100"/>
-                <TextBox x:Name="Price" Width="100"/>
+
+        <ScrollViewer Grid.Column="1" Grid.Row="1" Background="#FFF1F1F1">
+            <StackPanel Width="715">
+                <TextBlock Text="Items" Margin="10" FontSize="22" FontWeight="Medium"/>
+                <StackPanel Margin="20 0" Height="350">
+                    <ListView  x:Name="ListViewItems" SelectionChanged="ListBoxItem_SelectionChanged" Width="612" Height="350">
+                        <ListView.View>
+
+                            <GridView>
+
+                                <GridViewColumn Header="Name" Width="130">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding ProductName}" FontWeight="Bold" HorizontalAlignment="Right" FontSize="20"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Price" Width="130">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Price, StringFormat={}{0:G}}" FontWeight="Black" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Description" Width="220">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Description}" FontWeight="Regular" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Image" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding ImageData}" Height="90" HorizontalAlignment="Left" x:Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="90" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                            </GridView>
+
+                        </ListView.View>
+
+                    </ListView>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-        <Button x:Name="ButtonAddToCart" Margin="0,10,0,10" Click="ButtonAddToCart_Click" HorizontalAlignment="Right" VerticalAlignment="Top">
+        </ScrollViewer>
+        <TextBlock x:Name="SelectedItem" Text="Selected item:" Width="100" Height="25" Margin="245,414,380,11" FontWeight="Bold" FontSize="15"/>
+        <TextBox x:Name="Price" Width="100" Height="25" Margin="467,412,158,12"/>
+        <TextBox x:Name="ProductName" Width="100" Height="25" Margin="362,412,263,12"/>
+        <Button x:Name="ButtonAddToCart" Width="90" Height="26" Margin="572,414,63,10" Click="ButtonAddToCart_Click" >
             Add To Cart
         </Button>
     </Grid>
-    
+
+
 </UserControl>

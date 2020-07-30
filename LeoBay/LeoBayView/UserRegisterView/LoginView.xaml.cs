@@ -50,8 +50,8 @@ namespace LeoBayView.UserRegisterView
                     string welcomeMessage = _loginController.GetCurrentUser();
                     MessageBox.Show(welcomeMessage);
                     Reset();
-                    this.Close();
-                }
+                    Hide();
+                }   
                 else
                 {
                     ErrorMessage.Text = "Sorry! Please enter existing emailid/password.";

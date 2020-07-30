@@ -51,8 +51,7 @@ namespace LeoBayView
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-
-            _loginView.Show();
+            _loginView.ShowDialog();
         }
 
         private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
