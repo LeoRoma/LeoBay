@@ -56,8 +56,8 @@
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
-        <TextBlock x:Name="SelectedItem" Text="Click here to add an item:" Height="25" Margin="395,406,148,19" FontWeight="Bold" FontSize="15"/>
-        <Button x:Name="ButtonHome" Margin="0,407,66,0" Click="ButtonAdd_Click" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <TextBlock x:Name="SelectedItem" Text="Click here to add an item:" Height="25" Margin="362,407,181,18" FontWeight="Bold" FontSize="15"/>
+        <Button x:Name="ButtonHome" Margin="562,406,63,19" Click="ButtonAdd_Click" Height="25" Width="100">
             Add Item
         </Button>
 
