@@ -89,11 +89,12 @@ Implement the GUI and fix possible bugs
 
 ### Review
 - Completed sprint 3 and also the MVP
-- Need to work on Gui
+- Need to work on GUI
 
 ### Retro
 **What went well**
-
+- My product is completed with the GUI
 
 **What can I improve**
-
+- Need to add the image in the shopping cart
+- Some redirection is not working properly
