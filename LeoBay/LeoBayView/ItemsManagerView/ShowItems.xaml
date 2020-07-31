@@ -20,7 +20,7 @@
                                 <GridViewColumn Header="Name" Width="130">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding ProductName}" FontWeight="Bold" HorizontalAlignment="Right" FontSize="20"/>
+                                            <TextBlock Text="{Binding ProductName}" FontWeight="Bold" HorizontalAlignment="Right" FontSize="15"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>

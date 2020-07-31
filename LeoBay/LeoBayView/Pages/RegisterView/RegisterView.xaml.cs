@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using LeoBayController;
+using LeoBayView.ItemsManagerView;
 
 namespace LeoBayView.Pages.RegisterView
 {
@@ -69,7 +70,7 @@ namespace LeoBayView.Pages.RegisterView
                     _registerController.CreateNewUser(firstName, lastName, email, password);
                     ErrorMessage.Text = "You have Registered successfully.";
                     Reset();
-                    FrameMain.Navigate(new MainWindow());
+                    FrameMain.Navigate(new ShowItemsView());
                 }
             }
         }
@@ -93,9 +94,6 @@ namespace LeoBayView.Pages.RegisterView
             FrameMain.Navigate(new LoginView());
         }
 
-        private void FrameMain_Navigated(object sender, NavigationEventArgs e)
-        {
-
-        }
+  
     }
 }

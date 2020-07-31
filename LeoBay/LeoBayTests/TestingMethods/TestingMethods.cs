@@ -37,7 +37,7 @@ namespace LeoBayTests
         {
             using (var db = new LeoBayContext())
             {
-                var pw = db.Users.Where(u => u.Email == email).Select(u => u.Password).FirstOrDefault();
+                var encryptedPassword = db.Users.Where(u => u.Email == email).Select(u => u.Password).FirstOrDefault();
                 var details =
                     (from user in db.Users
                      where user.Email == email
@@ -48,9 +48,10 @@ namespace LeoBayTests
                          user.LastName,
                          user.Email
                      }).ToList();
-                if (details.FirstOrDefault() != null && pw == password)
+                if (details.FirstOrDefault() != null && encryptedPassword == password)
                 {
                     return true;
+
                 }
                 return false;
             }
@@ -96,8 +97,6 @@ namespace LeoBayTests
             using (var db = new LeoBayContext())
             {
                 CurrentUser.Id = 1;
-                var user = db.Users.Where(u => u.UserId == CurrentUser.Id).FirstOrDefault();
-                var order = db.Orders;
                 db.Add(new Order { ProductId = 1, BuyerId = CurrentUser.Id, Date = DateTime.Now });
                 db.SaveChanges();
                 CurrentUser.Id = 0;

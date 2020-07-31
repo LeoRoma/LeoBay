@@ -36,9 +36,10 @@
             <TextBox Height="23" x:Name="TextBoxFirstName" Margin="286,55,189,156"  Width="200" />
             <TextBox Height="23" x:Name="TextBoxLastName" Margin="286,78,189,133" Width="200" />
             <TextBox Height="23" x:Name="TextBoxEmail" Margin="286,101,189,110"  Width="200" />
-            <PasswordBox Height="23" x:Name="PasswordBox1" Margin="286,147,189,64" Width="200" />
+           
             <!--For password-->
-            <PasswordBox x:Name="PasswordBoxConfirm" Height="23" Margin="286,124,189,87" Width="200" />
+            <PasswordBox x:Name="PasswordBoxConfirm" Height="23" Margin="286,147,189,64" Width="200" />
+            <PasswordBox Height="23" x:Name="PasswordBox1" Margin="286,124,189,87" Width="200" />  
             <Button x:Name="ButtonSubmit" Content="Submit" Height="23" Margin="338,188,267,23" Width="70" Click="ButtonSubmit_Click" />
             <Button x:Name="ButtonReset" Content="Reset" Height="23" Margin="416,188,189,23" Width="70" Click="ButtonReset_Click" />
             <TextBlock Text="Already registered?" Margin="530,150,40,0" Width="110" Height="25" Foreground="Gray" Cursor="Hand"/>
@@ -50,4 +51,4 @@
         </Grid>
         <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
-</Page>
+</Page> 

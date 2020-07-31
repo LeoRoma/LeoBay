@@ -56,14 +56,14 @@ namespace LeoBayView.ShoppinCart
                 ProductName.Text = _name;
                 Price.Text = _price;
                 Description.Text = _description;
-                BitmapImage src = new BitmapImage();
-                src.BeginInit();
-                src.UriSource = new Uri(CurrentUser.Image, UriKind.Relative);
-                src.CacheOption = BitmapCacheOption.OnLoad;
-                src.EndInit();
+                //BitmapImage src = new BitmapImage();
+                //src.BeginInit();
+                //src.UriSource = new Uri(CurrentUser.Image, UriKind.Relative);
+                //src.CacheOption = BitmapCacheOption.OnLoad;
+                //src.EndInit();
 
                 buttonImage = new Image();
-                buttonImage.Source = src;
+                //buttonImage.Source = src;
             }
         }
 
@@ -105,13 +105,10 @@ namespace LeoBayView.ShoppinCart
         {
 
             MessageBox.Show("Checkout complete");
+            _checkoutController.AddToCart(_currentProductId);
             _checkoutController.ConfirmPayment(_currentProductId);
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -12,22 +12,16 @@ namespace LeoBayTests.CheckoutControllerTests
     {
         private TestingMethods _testingMethods = new TestingMethods();
 
-        [Test]
+        //[Test]
         public void CreateANewOrder()
         {
-            var count = _testingMethods.GetOrder().Count;
-            _testingMethods.AddToCart();
-            var newCount = _testingMethods.GetUser().Count;
-            Assert.AreEqual(count + 1, newCount);
+            //var count = _testingMethods.GetOrder().Count;
+            //_testingMethods.AddToCart();
+            //var newCount = _testingMethods.GetUser().Count;
+            //Assert.AreEqual(count + 1, newCount);
 
             _testingMethods.DeleteOrder();
         }
 
-        [Test]
-        public void PaymentSucceded()
-        {
-            _testingMethods.ConfirmPayment();
-
-        }
     }
 }

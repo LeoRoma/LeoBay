@@ -41,12 +41,12 @@ namespace LeoBayView
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
-            FrameMain.Navigate(new MainWindow());
+            FrameMain.Navigate(this);
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
-            FrameMain.Navigate(_registerView);
+            FrameMain.Navigate(new RegisterView());
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)

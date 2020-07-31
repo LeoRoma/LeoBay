@@ -61,7 +61,7 @@ namespace LeoBayView.ItemsManagerView
             MessageBox.Show("You have added an item!");
             this.Close();
             _showItemsView.PopulateAllItems();
-            FrameMain.Navigate(new ShowItemsView());
+            FrameMain.Navigate(new YourSpace());
         }
     }
 }
