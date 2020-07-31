@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeoBayModel.Migrations
 {
     [DbContext(typeof(LeoBayContext))]
-    [Migration("20200728232633_Products")]
-    partial class Products
+    [Migration("20200731003032_RebuildedDB")]
+    partial class RebuildedDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,8 +63,8 @@ namespace LeoBayModel.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("ImageData")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("ImageData")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
@@ -77,8 +77,7 @@ namespace LeoBayModel.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SellerId")
-                        .HasColumnType("int")
-                        .HasMaxLength(16);
+                        .HasColumnType("int");
 
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
@@ -129,7 +128,7 @@ namespace LeoBayModel.Migrations
             modelBuilder.Entity("LeoBayModel.Product", b =>
                 {
                     b.HasOne("LeoBayModel.Order", "Order")
-                        .WithMany("Prodcuts")
+                        .WithMany("Products")
                         .HasForeignKey("OrderId");
 
                     b.HasOne("LeoBayModel.User", "User")
