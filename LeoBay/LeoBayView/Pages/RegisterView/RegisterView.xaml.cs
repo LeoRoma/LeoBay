@@ -93,6 +93,9 @@ namespace LeoBayView.Pages.RegisterView
             FrameMain.Navigate(new LoginView());
         }
 
+        private void FrameMain_Navigated(object sender, NavigationEventArgs e)
+        {
 
+        }
     }
 }
