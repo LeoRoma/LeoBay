@@ -82,3 +82,18 @@ An user can purchase the interested item.
 **What can I improve**
 - When the time is ticking very fast, I have to avoid to be an adventurer, KISS is always the best solution
 - I really like to overcomplicate myself and struggle.
+
+## Sprint 4
+**Goals**
+Implement the GUI and fix possible bugs
+
+### Review
+- Completed sprint 3 and also the MVP
+- Need to work on Gui
+
+### Retro
+**What went well**
+
+
+**What can I improve**
+
