@@ -9,7 +9,7 @@ namespace LeoBayModel
     {
         public override string ToString()
         {
-            return $"{ProductName} £{Price} {Description} {ImageData}";
+            return $"{ProductName} {Price} {Description} {ImageData}";
         }
     }
 }

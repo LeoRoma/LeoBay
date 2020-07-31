@@ -15,7 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LeoBayController;
 using LeoBayView.ItemsManagerView;
-using LeoBayView.UserControls;
+//using LeoBayView.UserControls;
+using LeoBayView.Pages.RegisterView;
 using LeoBayModel;
 using LeoBayController.ItemsManagerController;
 using LeoBayView.ShoppinCart;
@@ -40,37 +41,38 @@ namespace LeoBayView
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameMain.Navigate(new MainWindow());
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = _registerView;
+            FrameMain.Navigate(_registerView);
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            
-            Main.Content = _loginView;
+            FrameMain.Navigate(new LoginView());
         }
 
         private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
         {
             _showItemsView.PopulateAllItems();
-            Main.Content = _showItemsView;
+            FrameMain.Navigate(new ShowItemsView());
         }
 
         private void ButtonYourSpace_Click(object sender, RoutedEventArgs e)
         {
             _yourSpace.GetCurrentItems();
-            Main.Content = _yourSpace;
+            FrameMain.Navigate(new YourSpace());
         }
 
         private void ButtonLogout_Click(object sender, RoutedEventArgs e)
         {
             EndCurrentUser();
+            
             MessageBoxResult result = MessageBox.Show("You have logged out", "Logout");
-
+            _yourSpace.GetCurrentItems();
+            FrameMain.Navigate(new YourSpace());
         }
 
         private void EndCurrentUser()
@@ -80,16 +82,5 @@ namespace LeoBayView
             CurrentUser.LastName = "";
             CurrentUser.Email = "";
         }
-
-        private void Main_Navigated(object sender, NavigationEventArgs e)
-        {
-
-        }
-
-        //public void SetSelectedProduct(object selectedItem)
-        //{
-        //    _itemsManagerController.SetSelectedItem(selectedItem);
-        //}
-
     }
 }

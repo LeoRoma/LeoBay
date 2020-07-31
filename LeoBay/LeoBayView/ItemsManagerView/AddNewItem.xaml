@@ -5,24 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeoBayView.ItemsManagerView"
         mc:Ignorable="d"
-        Title="AddItem" Height="450" Width="800">
+        Title="AddItem" Height="350" Width="800">
     <Grid>
-        <TextBlock x:Name="TextBlockProductName" Height="23" HorizontalAlignment="Left" Margin="50,73,0,0" Text="Name" VerticalAlignment="Top" Width="67" />
-        <TextBlock x:Name="TextBlockPrice" Height="23" HorizontalAlignment="Left" Margin="50,125,0,0" Text="Price" VerticalAlignment="Top" Width="77" />
-        <TextBlock x:Name="TextBlockDescription" Height="23" HorizontalAlignment="Left" Margin="50,153,0,0" Text="Descritpion" VerticalAlignment="Top" Width="67" />
-        <TextBlock x:Name="TextBlockImg" Height="23" HorizontalAlignment="Left" Margin="50,194,0,0" Text="Image" VerticalAlignment="Top" Width="67" />
-        <TextBox x:Name="TextBoxName" Height="23" HorizontalAlignment="Left" Margin="118,73,0,0" VerticalAlignment="Top" Width="247" />
-        <TextBox x:Name="TextBoxPrice" Height="22" HorizontalAlignment="Left" Margin="118,114,0,0" VerticalAlignment="Top" Width="247" />
-        <TextBox x:Name="TextBoxDescription" Height="22" HorizontalAlignment="Left" Margin="118,154,0,0" VerticalAlignment="Top" Width="247" />
-        <TextBox x:Name="TextBoxImage1" Height="22" HorizontalAlignment="Left" Margin="118,194,0,0" VerticalAlignment="Top" Width="247" />
+        <Rectangle Height="80" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Add An Item to Sell" Foreground="White" FontSize="20" HorizontalAlignment="Center" Name="lblTitle" VerticalAlignment="Top" Margin="0,20,0,0" />
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="720">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="355*"/>
+                <ColumnDefinition Width="343*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="TextBlockProductName" Height="23" HorizontalAlignment="Left" Margin="50,73,0,0" Text="Name" VerticalAlignment="Top" Width="67" />
+            <TextBlock x:Name="TextBlockPrice" Height="23" HorizontalAlignment="Left" Margin="50,125,0,0" Text="Price £" VerticalAlignment="Top" Width="77" />
+            <TextBlock x:Name="TextBlockDescription" Height="23" HorizontalAlignment="Left" Margin="50,153,0,0" Text="Descritpion" VerticalAlignment="Top" Width="67" />
+            <TextBlock x:Name="TextBlockImg" Height="23" HorizontalAlignment="Left" Margin="50,194,0,0" Text="Image" VerticalAlignment="Top" Width="67" />
 
-        <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="ErrorMessage" VerticalAlignment="Top" Width="247" Margin="451,83,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
-        <Label Content="Save and Retrieve Images From Database in WPF" FontSize="20" HorizontalAlignment="Center" Name="lblTitle" VerticalAlignment="Top" Margin="123,11,123,0" />
-        <Button Content="Browse" Height="23" HorizontalAlignment="Left" Margin="382,0,0,0" Name="btnBrowse" VerticalAlignment="Center" Width="142" Click="btnBrowse_Click" />
-        <Button x:Name="ButtonSave" Content="Save" Height="23" HorizontalAlignment="Left" Margin="382,272,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSave_Click" />
-        <!--<ComboBox Height="23" HorizontalAlignment="Left" Margin="435,61,0,0" Name="cbImages" VerticalAlignment="Top" Width="140" SelectionChanged="cbImages_SelectionChanged" />-->
-        <!--<Button Content="Show" Height="23" HorizontalAlignment="Left" Margin="583,61,0,0" Name="btnShow" VerticalAlignment="Top" Width="75" Click="btnShow_Click" />-->
-        <Image x:Name="ImageBox1" Height="172" HorizontalAlignment="Left" Margin="118,241,0,0" Stretch="Fill" VerticalAlignment="Top" Width="248" />
-        
+            <TextBox x:Name="TextBoxName" Height="23" HorizontalAlignment="Left" Margin="118,73,0,0" VerticalAlignment="Top" Width="247" Grid.ColumnSpan="2" />
+            <TextBox x:Name="TextBoxPrice" Height="22" HorizontalAlignment="Left" Margin="118,114,0,0" VerticalAlignment="Top" Width="247" Grid.ColumnSpan="2" />
+            <TextBox x:Name="TextBoxDescription" Height="22" HorizontalAlignment="Left" Margin="118,154,0,0" VerticalAlignment="Top" Width="247" Grid.ColumnSpan="2" />
+            <TextBox x:Name="TextBoxImage1" Height="22" HorizontalAlignment="Left" Margin="118,194,0,0" VerticalAlignment="Top" Width="247" Grid.ColumnSpan="2" />
+
+            <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="ErrorMessage" VerticalAlignment="Top" Width="247" Margin="96,83,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C" Grid.Column="1"  />
+
+            <Button Content="Browse" Height="23" HorizontalAlignment="Left" Margin="44,241,0,0" Name="btnBrowse" VerticalAlignment="Top" Width="142" Click="btnBrowse_Click" Grid.Column="1" />
+            <Button x:Name="ButtonSave" Content="Save" Height="23" HorizontalAlignment="Left" Margin="290,241,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSave_Click" Grid.ColumnSpan="2" />
+            <Image x:Name="ImageBox1" Height="139" Margin="57,73,38,0" Stretch="Fill" VerticalAlignment="Top" Grid.Column="1" />
+        </Grid>
+
+        <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

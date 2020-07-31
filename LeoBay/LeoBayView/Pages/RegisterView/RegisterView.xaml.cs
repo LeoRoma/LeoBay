@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -14,13 +13,12 @@ using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using LeoBayController;
 
-
-namespace LeoBayView.UserControls
+namespace LeoBayView.Pages.RegisterView
 {
     /// <summary>
-    /// Interaction logic for Register.xaml
+    /// Interaction logic for RegisterView.xaml
     /// </summary>
-    public partial class RegisterView : UserControl
+    public partial class RegisterView : Page
     {
         private RegisterController _registerController = new RegisterController();
         //private MainWindow _mainWindow = new MainWindow();
@@ -71,10 +69,11 @@ namespace LeoBayView.UserControls
                     _registerController.CreateNewUser(firstName, lastName, email, password);
                     ErrorMessage.Text = "You have Registered successfully.";
                     Reset();
+                    FrameMain.Navigate(new MainWindow());
                 }
             }
         }
-   
+
         private void ButtonReset_Click(object sender, RoutedEventArgs e)
         {
             Reset();
@@ -89,9 +88,11 @@ namespace LeoBayView.UserControls
         }
 
 
-        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        private void ButtonClickHere_Click(object sender, RoutedEventArgs e)
         {
-            //_mainWindow.Main.Content = _loginView;
+            FrameMain.Navigate(new LoginView());
         }
+
+
     }
 }

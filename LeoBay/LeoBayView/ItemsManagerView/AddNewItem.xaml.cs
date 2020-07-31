@@ -27,7 +27,7 @@ namespace LeoBayView.ItemsManagerView
     public partial class AddItem : Window
     {
         private ItemsManagerController _itemsManagerController = new ItemsManagerController();
-
+        private ShowItemsView _showItemsView = new ShowItemsView();
         public AddItem()
         {
             InitializeComponent();
@@ -60,6 +60,8 @@ namespace LeoBayView.ItemsManagerView
             _itemsManagerController.AddNewItem(name, price, description, image);
             MessageBox.Show("You have added an item!");
             this.Close();
+            _showItemsView.PopulateAllItems();
+            FrameMain.Navigate(new ShowItemsView());
         }
     }
 }

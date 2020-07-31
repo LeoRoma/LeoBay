@@ -7,57 +7,57 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
+        
 
-        <!--Navigation Panel-->
-        <Grid Background="DarkBlue">
-
-            <!--Navigation Panel Top-->
-            <Grid x:Name="nav_panel_top"  Background="#2E333A"
+        <Rectangle Height="100" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.1,4" StartPoint="1.1,3">
+                    <GradientStop Color="#829FD9"/>
+                    <GradientStop Color="#5E6EBD" Offset="1"/>
+                    <GradientStop Color="#CBC8DE" Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Grid x:Name="nav_panel_top"
                   VerticalAlignment="Top"
-                  Height="75">
-                <Label x:Name="Header" Content="LeoBay" Grid.Row="0" FontSize="35" HorizontalAlignment="Center" />
-                <StackPanel x:Name="stack_panel_top" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                    <Button x:Name="ButtonLogin" Margin="0,10,0,10" Click="ButtonLogin_Click" 
+                  Height="100">
+
+            <Label x:Name="Header" Content="LeoBay" Grid.Row="0" FontSize="35" HorizontalAlignment="Center" Foreground="White"/>
+            <StackPanel x:Name="stack_panel_top" Orientation="Horizontal"  VerticalAlignment="Bottom">
+
+                <Button x:Name="ButtonHome" Foreground="White" FontWeight="ExtraBold" Background="#5E6EBD" Margin="10,10,10,10" Height="30" Width="70" Click="ButtonHome_Click">
+                    Home
+                </Button>
+
+                <Button x:Name="ButtonShowItems" Foreground="White" FontWeight="Bold" Background="#829FD9" Margin="0,10,10,10" Height="30" Width="70" Click="ButtonShowItems_Click">
+                    Items
+                </Button>
+                <Button x:Name="ButtonYourSpace" Foreground="White" FontWeight="Bold" Background="#CBC8DE" Margin="0,10,0,10" Height="30" Width="70" Click="ButtonYourSpace_Click">
+                    Your Space
+                </Button>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+
+                <Button x:Name="ButtonLogin" Foreground="White" FontWeight="Bold" Background="#D7D9DB" Margin="10,10,0,10" Click="ButtonLogin_Click" 
                             VerticalAlignment="Center" HorizontalAlignment="Right" Content="Login"/>
-                    <Button x:Name="ButtonRegister" Click="ButtonRegister_Click" VerticalAlignment="Center" HorizontalAlignment="Right"
-                            Content="Register"/>
+                <Button x:Name="ButtonRegister" Foreground="White" FontWeight="Bold" Background="#D7D9DB" Click="ButtonRegister_Click" VerticalAlignment="Center" HorizontalAlignment="Right"
+                            Margin="10,10,0,10" Content="Register" />
+                <Button x:Name="ButtonLogout" Foreground="White" FontWeight="Bold" Background="#D7D9DB"  Click="ButtonLogout_Click" Margin="10,10,10,10"
+                                Height="20" Content="Logout" HorizontalAlignment="Right"/>
+            </StackPanel>
 
-                </StackPanel>
-            </Grid>
-            <!--Navigation Panel Left-->
-            <Grid x:Name="nav_panel_left" 
-                  HorizontalAlignment="Left" 
-                  VerticalAlignment="Bottom"
-                  Height="525"
-                  Width="75"
-                  Background="#2E333A">
-
-                <StackPanel x:Name="stack_panel_bottom">
-
-                    <Button x:Name="ButtonHome" Margin="0,10,0,10" Click="ButtonHome_Click">
-                        Home
-                    </Button>
-                
-
-                    <Button x:Name="ButtonShowItems" Margin="0,10,0,10" Click="ButtonShowItems_Click">
-                        Items
-                    </Button>
-                    <Button x:Name="ButtonYourSpace" Margin="0,10,0,10" Click="ButtonYourSpace_Click">
-                        Your Space
-                    </Button>
-                    <Button x:Name="ButtonLogout" Click="ButtonLogout_Click" Margin="0,10,0,10"
-                            Content="Logout"/>
-                </StackPanel>
-
-            </Grid>
-            <Grid Width="725" Height="510" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <!--<Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>-->
-                <Frame x:Name="Main" NavigationUIVisibility="Hidden" Navigated="Main_Navigated"></Frame>
-
-            </Grid>
         </Grid>
+        <Grid HorizontalAlignment="Right" Height="100">
 
+        </Grid>
+        <Grid Width="800" Height="485" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,99,0,0">
+          
+            <Grid.Background>
+                <ImageBrush ImageSource="./Images/ecommerce.jpg"/>
+            </Grid.Background>
+            <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"></Frame>
+
+        </Grid>
     </Grid>
 </Window>

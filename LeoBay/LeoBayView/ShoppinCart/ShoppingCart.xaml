@@ -5,25 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeoBayView.ShoppinCart"
         mc:Ignorable="d"
-        Title="ShoppingCart" Height="250" Width="500">
+        Title="ShoppingCart" Height="350" Width="600" Language="en-GB">
     <Grid>
-        <Grid x:Name="ItemDisplay" Width="300" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <Label x:Name="ItemToPurchase" Content="Checkout Cart" HorizontalAlignment="Center"></Label>
-            <StackPanel x:Name = "Display" Margin="0,0,0,10">
-                <StackPanel Orientation = "Horizontal" Margin = "50, 50, 0, 0">
-                    <TextBlock x:Name="Name" Text="Name" />
-                    <TextBlock x:Name="ProductPrice" Text="Price"/>
-                    <TextBox x:Name="ProductName" Width="100"/>
-                    <TextBox x:Name="Price" Width="100"/>
-                </StackPanel>
-            </StackPanel>
-        </Grid>
-        <Grid x:Name="Checkout" Width="300" Height="100" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Label x:Name="Amount">Amount</Label>
-            <TextBox x:Name="AmountToPay" Width="100" Height="50"></TextBox>
-            <Button x:Name="ButtonConfirmPayment" Content="Confirm" Height="23" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="104" Click="ButtonConfirmPayment_Click" />
-        </Grid>
+        <Rectangle Height="50" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label x:Name="ItemToPurchase" Content="SHOPPING CART" HorizontalAlignment="Center" FontSize="20" Foreground="White"></Label>
+
+        <TextBlock Width="200" Height="15" Text="Name" FontSize="12" Margin="266,41,34,178" Foreground="White"/>
+        <TextBlock Width="200" Height="15" Text="Description" FontSize="12" TextWrapping="Wrap" Foreground="White" Margin="266,88,34,131"/>
+        <TextBlock Width="200" Height="15" Text="Price" FontSize="12" Margin="266,130,34,89" Foreground="White" />
+        <TextBox x:Name="ProductName" Width="200" Height="25" FontSize="18" Margin="266,63,34,146" Foreground="#FF6A6A6A"/>
+        <TextBox x:Name="Description" Width="200" Height="25" FontSize="18" Margin="266,105,34,104" Foreground="#FF6A6A6A"/>
+        <TextBox x:Name="Price" Width="200" Height="25" FontSize="18" Margin="266,146,34,63" Foreground="#FF6A6A6A"/>
+        <Button Background="#FF4572A0" Width="200" Height="25" BorderBrush="#FF4572A0" Content="SHOP NOW" Click="ButtonConfirmPayment_Click" Margin="266,185,34,24"/>
+        <Image Source="{Binding buttonImage}" x:Name="Image"  Height="143" HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top" Width="207" Margin="58,113,0,0">
+        </Image> 
 
 
     </Grid>
 </Window>
+
+

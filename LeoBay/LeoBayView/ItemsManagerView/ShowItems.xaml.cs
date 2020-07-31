@@ -13,10 +13,12 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Drawing;
+using System.Collections;
 using LeoBayModel;
 using LeoBayView.ShoppinCart;
 using LeoBayController.ItemsManagerController;
 using LeoBayController.CheckoutController;
+
 
 namespace LeoBayView.ItemsManagerView
 {
@@ -38,15 +40,14 @@ namespace LeoBayView.ItemsManagerView
 
         public void PopulateAllItems()
         {
-            AllItems.ItemsSource = _itemsManagerController.GetAllItems();
+            ListViewItems.ItemsSource = _itemsManagerController.GetAllItems();
         }
 
         public void ListBoxItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(AllItems.SelectedItem != null)
+            if (ListViewItems.SelectedItem != null)
             {
-                //_mainWindow.SetSelectedProduct(AllItems.SelectedItem);
-                _itemsManagerController.SetSelectedItem(AllItems.SelectedItem);
+                _itemsManagerController.SetSelectedItem(ListViewItems.SelectedItem);
                 PopulateItemFields();
             }
         }
@@ -65,11 +66,16 @@ namespace LeoBayView.ItemsManagerView
             int currentProductId = _itemsManagerController.SelectedItem.ProductId;
             string productName = _itemsManagerController.SelectedItem.ProductName;
             string price = _itemsManagerController.SelectedItem.Price.ToString();
-            _checkoutController.AddToCart(currentProductId);
-            _shoppingCart.GetCheckoutItem(productName, price, currentProductId);
+            string image = _itemsManagerController.SelectedItem.ImageData;
+            string description = _itemsManagerController.SelectedItem.Description;
+            CurrentUser.Image = image;
+            //_checkoutController.AddToCart(currentProductId);
+            _shoppingCart.GetCheckoutItem(productName, price, currentProductId, description);
             _shoppingCart.PopulateCheckoutItem();
             MessageBox.Show("Items added successfully to your cart!");
             _shoppingCart.Show();
         }
+
+
     }
 }

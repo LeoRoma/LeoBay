@@ -13,18 +13,16 @@ using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using LeoBayController;
 using LeoBayModel;
+using LeoBayView.ItemsManagerView;
 
-namespace LeoBayView.UserControls
+namespace LeoBayView.Pages.RegisterView
 {
     /// <summary>
     /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class LoginView : Page
     {
         private LoginController _loginController = new LoginController();
-        //private MainWindow _mainWindow = new MainWindow();
-        //private RegisterView _registerView = new RegisterView();
-
         public LoginView()
         {
             InitializeComponent();
@@ -51,7 +49,9 @@ namespace LeoBayView.UserControls
                 if (_loginController.AuthenticateUser(email, password) == true)
                 {
                     string welcomeMessage = _loginController.GetCurrentUser();
-                    ErrorMessage.Text = welcomeMessage;
+                    MessageBox.Show(welcomeMessage);
+                    FrameMain.Navigate(new ShowItemsView());
+                    Reset();
                 }
                 else
                 {
@@ -61,9 +61,16 @@ namespace LeoBayView.UserControls
             }
         }
 
-        private void buttonRegister_Click(object sender, RoutedEventArgs e)
+        public void Reset()
         {
-            //_mainWindow.Main.Content = _registerView;
+            TextBoxEmail.Text = "";
+            passwordBox1.Password = "";
         }
+
+        private void ButtonClickHere_Click(object sender, RoutedEventArgs e)
+        {
+            FrameMain.Navigate(new RegisterView());
+        }
+
     }
 }

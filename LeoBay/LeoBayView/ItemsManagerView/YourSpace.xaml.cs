@@ -30,13 +30,22 @@ namespace LeoBayView.ItemsManagerView
 
         public void GetCurrentItems()
         {
-            CurrentItems.ItemsSource = _itemsManagerController.GetCurrentUserItems();
+           ListCurrentItems.ItemsSource = _itemsManagerController.GetCurrentUserItems();
         }
 
         public void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
             
             _addItem.Show();
+        }
+
+        public void ListBoxCurrentItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListCurrentItems.SelectedItem != null)
+            {
+                _itemsManagerController.SetSelectedItem(ListCurrentItems.SelectedItem);
+               
+            }
         }
     }
 }

@@ -28,10 +28,25 @@ namespace LeoBayView.ShoppinCart
         private int _currentProductId;
         private string _name;
         private string _price;
+        private string _description;
+        private string _image;
+
+        private Image buttonImage;
+
+        public Image ButtonImage
+        {
+            get
+            {
+                return buttonImage;
+            }
+        }
+
+        private ImageSourceConverter _imgSourceConverter = new ImageSourceConverter();
         public ShoppingCart()
         {
             InitializeComponent();
             PopulateCheckoutItem();
+            
         }
 
         public void PopulateCheckoutItem()
@@ -40,14 +55,24 @@ namespace LeoBayView.ShoppinCart
             {
                 ProductName.Text = _name;
                 Price.Text = _price;
+                Description.Text = _description;
+                BitmapImage src = new BitmapImage();
+                src.BeginInit();
+                src.UriSource = new Uri(CurrentUser.Image, UriKind.Relative);
+                src.CacheOption = BitmapCacheOption.OnLoad;
+                src.EndInit();
+
+                buttonImage = new Image();
+                buttonImage.Source = src;
             }
         }
 
-        public void GetCheckoutItem(string productName, string price, int currentProductId)
+        public void GetCheckoutItem(string productName, string price, int currentProductId, string description)
         {
             SetCheckoutItemName(productName);
             SetCheckoutItemPrice(price);
             SetCheckoutItemId(currentProductId);
+            SetCheckoutItemDescription(description);
         }
 
         public void SetCheckoutItemName(string productName)
@@ -65,17 +90,28 @@ namespace LeoBayView.ShoppinCart
             _currentProductId = currentProductId;
         }
 
+        public void SetImage(string image)
+        {
+            _image = image;
+        }
+
+
+        public void SetCheckoutItemDescription(string description)
+        {
+            _description = description;
+        }
+
         private void ButtonConfirmPayment_Click(object sender, RoutedEventArgs e)
         {
-            
-            if(AmountToPay.Text == _price)
-            {
-                MessageBox.Show("Checkout complete");
-                _checkoutController.ConfirmPayment(_currentProductId);
-                this.Close();
 
-            }
-            MessageBox.Show("Please insert correct amount");
+            MessageBox.Show("Checkout complete");
+            _checkoutController.ConfirmPayment(_currentProductId);
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
