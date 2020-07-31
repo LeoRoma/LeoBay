@@ -41,7 +41,7 @@ namespace LeoBayView
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameMain.Navigate(new MainWindow());
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
@@ -51,7 +51,7 @@ namespace LeoBayView
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            FrameMain.Navigate(_loginView);
+            FrameMain.Navigate(new LoginView());
         }
 
         private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
