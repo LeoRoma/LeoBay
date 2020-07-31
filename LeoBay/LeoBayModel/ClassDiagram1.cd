@@ -3,15 +3,15 @@
   <Class Name="LeoBayModel.CurrentUser">
     <Position X="11.5" Y="1.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAEAAACAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAg=</HashCode>
       <FileName>CurrentUser.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LeoBayModel.User">
     <Position X="2.5" Y="0.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAEAAEAAACAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAw=</HashCode>
-      <FileName>User.cs</FileName>
+      <HashCode>AAEAAEAAACAAAAAEAAAAAAgAAAAAAAACAAAAAAAAAAw=</HashCode>
+      <FileName>Partial Classes\User.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Products" />
@@ -21,8 +21,8 @@
   <Class Name="LeoBayModel.Product">
     <Position X="7.75" Y="1.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>EAEBAAAAAQAgAAAAAAAAAIAAAAAAAQABAAAAAAAIAAA=</HashCode>
-      <FileName>Product.cs</FileName>
+      <HashCode>EAEBAAAAAQAgAAAEAAAAAIAAAAAAAQABAAAAAAAIAAA=</HashCode>
+      <FileName>Partial Classes\Product.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="User" />
@@ -32,14 +32,14 @@
   <Class Name="LeoBayModel.Order">
     <Position X="2.75" Y="4.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>EAABAAAAAAAAAAAAAAAAABAAAQAAAAABAAEAAAAAAAA=</HashCode>
+      <HashCode>EAABAAAAAAAAAAAAAAAAABAAAQAAAAABAAAAAAAAAAQ=</HashCode>
       <FileName>Order.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="User" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
-      <Property Name="Prodcuts" />
+      <Property Name="Products" />
     </ShowAsCollectionAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />

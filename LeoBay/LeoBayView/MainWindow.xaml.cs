@@ -57,20 +57,22 @@ namespace LeoBayView
         private void ButtonShowItems_Click(object sender, RoutedEventArgs e)
         {
             _showItemsView.PopulateAllItems();
-            //Main.Content = _showItemsView;
+            FrameMain.Navigate(new ShowItemsView());
         }
 
         private void ButtonYourSpace_Click(object sender, RoutedEventArgs e)
         {
             _yourSpace.GetCurrentItems();
-            //Main.Content = _yourSpace;
+            FrameMain.Navigate(new YourSpace());
         }
 
         private void ButtonLogout_Click(object sender, RoutedEventArgs e)
         {
             EndCurrentUser();
+            
             MessageBoxResult result = MessageBox.Show("You have logged out", "Logout");
-
+            _yourSpace.GetCurrentItems();
+            FrameMain.Navigate(new YourSpace());
         }
 
         private void EndCurrentUser()
@@ -80,16 +82,5 @@ namespace LeoBayView
             CurrentUser.LastName = "";
             CurrentUser.Email = "";
         }
-
-        private void Main_Navigated(object sender, NavigationEventArgs e)
-        {
-
-        }
-
-        //public void SetSelectedProduct(object selectedItem)
-        //{
-        //    _itemsManagerController.SetSelectedItem(selectedItem);
-        //}
-
     }
 }

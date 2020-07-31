@@ -60,6 +60,6 @@
         <Button x:Name="ButtonHome" Margin="562,406,63,19" Click="ButtonAdd_Click" Height="25" Width="100">
             Add Item
         </Button>
-
+        <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"/>
     </Grid>
 </UserControl>

@@ -60,6 +60,7 @@
         <Button x:Name="ButtonAddToCart" Width="90" Height="26" Margin="572,414,63,10" Click="ButtonAddToCart_Click" >
             Add To Cart
         </Button>
+        <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"/>
     </Grid>
 
 

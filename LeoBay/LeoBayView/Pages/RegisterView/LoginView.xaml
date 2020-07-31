@@ -19,7 +19,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Rectangle Width="280" Height="278" VerticalAlignment="Top" Margin="35,117,35,0" RadiusY="10" RadiusX="10" Fill="White">
+        <Rectangle Width="280" Height="320" VerticalAlignment="Top" Margin="35,90,35,0" RadiusY="10" RadiusX="10" Fill="White">
             <Rectangle.Effect>
                 <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
             </Rectangle.Effect>
@@ -28,7 +28,7 @@
             <Label Content="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="Gray" FontSize="18"/>
             <StackPanel VerticalAlignment="Center" Margin="15,0,15,0" Height="128">
                 <TextBlock x:Name="TextBlockEmail" Text="Email" Height="19" Width="30" />
-                <TextBox x:Name="TextBoxEmail" Margin="0,10" Width="200" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox x:Name="TextBoxEmail" Margin="0,0" Width="200" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
                 <TextBlock x:Name="TextBlockPassword" Height="19" Text="Password" Width="50"/>
                 <PasswordBox x:Name="passwordBox1" Margin="0,10" Width="200" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
             </StackPanel>

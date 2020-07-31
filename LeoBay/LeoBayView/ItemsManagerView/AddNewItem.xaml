@@ -7,7 +7,16 @@
         mc:Ignorable="d"
         Title="AddItem" Height="350" Width="800">
     <Grid>
-        <Label Content="Add An Item to Sell" FontSize="20" HorizontalAlignment="Center" Name="lblTitle" VerticalAlignment="Top" Margin="0,35,0,0" />
+        <Rectangle Height="80" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Add An Item to Sell" Foreground="White" FontSize="20" HorizontalAlignment="Center" Name="lblTitle" VerticalAlignment="Top" Margin="0,20,0,0" />
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="720">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="355*"/>
@@ -30,6 +39,6 @@
             <Image x:Name="ImageBox1" Height="139" Margin="57,73,38,0" Stretch="Fill" VerticalAlignment="Top" Grid.Column="1" />
         </Grid>
 
-
+        <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
