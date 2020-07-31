@@ -54,9 +54,10 @@
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
-        <TextBlock x:Name="SelectedItem" Text="Selected item:" Width="100" Height="25" Margin="245,414,380,11" FontWeight="Bold" FontSize="15"/>
+        <TextBlock x:Name="SelectedItem" Text="Selected item:" Width="100" Height="25" Margin="230,414,380,11" FontWeight="Bold" FontSize="15"/>
+        <TextBlock x:Name="PoundSign" Text="£:" Width="50" Height="25" Margin="230,414,0,10" FontWeight="Bold" FontSize="15"/>
         <TextBox x:Name="Price" Width="100" Height="25" Margin="467,412,158,12"/>
-        <TextBox x:Name="ProductName" Width="100" Height="25" Margin="362,412,263,12"/>
+        <TextBox x:Name="ProductName" Width="100" Height="25" Margin="322,412,263,12"/>
         <Button x:Name="ButtonAddToCart" Width="90" Height="26" Margin="572,414,63,10" Click="ButtonAddToCart_Click" >
             Add To Cart
         </Button>

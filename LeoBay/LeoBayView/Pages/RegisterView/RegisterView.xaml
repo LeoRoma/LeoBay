@@ -9,19 +9,20 @@
       Title="RegisterView">
 
     <Grid Background="White">
-        <Rectangle Height="450" VerticalAlignment="Top">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF2281D1"/>
-                    <GradientStop Color="#FF34268A" Offset="1"/>
-                    <GradientStop Color="#FF33288B" Offset="0.546"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
+        
         <Label Content="REGISTRATION" Height="30" HorizontalAlignment="Center" Margin="0,0,0,300" Foreground="White" FontSize="18"/>
 
         <!--end Button as a Link button using style-->
-        <Grid Margin="76,0,49,0" Background="White" Height="234" VerticalAlignment="Center">
+        <Grid Margin="76,0,49,0" Background="#829FD9" Height="234" VerticalAlignment="Center">
+            <!--<Rectangle Height="450" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.1,4" StartPoint="1.1,3">
+                        <GradientStop Color="#829FD9"/>
+                        <GradientStop Color="#5E6EBD" Offset="1"/>
+                        <GradientStop Color="#CBC8DE" Offset="0.546"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="252*" />
                 <!--   <RowDefinition Height="12*" />-->

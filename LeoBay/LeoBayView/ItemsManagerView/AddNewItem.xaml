@@ -23,7 +23,7 @@
                 <ColumnDefinition Width="343*"/>
             </Grid.ColumnDefinitions>
             <TextBlock x:Name="TextBlockProductName" Height="23" HorizontalAlignment="Left" Margin="50,73,0,0" Text="Name" VerticalAlignment="Top" Width="67" />
-            <TextBlock x:Name="TextBlockPrice" Height="23" HorizontalAlignment="Left" Margin="50,125,0,0" Text="Price £" VerticalAlignment="Top" Width="77" />
+            <TextBlock x:Name="TextBlockPrice" Height="23" HorizontalAlignment="Left" Margin="50,115,0,0" Text="Price £" VerticalAlignment="Top" Width="77" />
             <TextBlock x:Name="TextBlockDescription" Height="23" HorizontalAlignment="Left" Margin="50,153,0,0" Text="Descritpion" VerticalAlignment="Top" Width="67" />
             <TextBlock x:Name="TextBlockImg" Height="23" HorizontalAlignment="Left" Margin="50,194,0,0" Text="Image" VerticalAlignment="Top" Width="67" />
 
