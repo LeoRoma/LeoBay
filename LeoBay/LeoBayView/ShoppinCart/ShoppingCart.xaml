@@ -18,14 +18,17 @@
         </Rectangle>
         <Label x:Name="ItemToPurchase" Content="SHOPPING CART" HorizontalAlignment="Center" FontSize="20" Foreground="White"></Label>
 
-        <TextBlock Width="200" Height="15" Text="Name" FontSize="12" Margin="266,41,34,178" Foreground="White"/>
-        <TextBlock Width="200" Height="15" Text="Description" FontSize="12" TextWrapping="Wrap" Foreground="White" Margin="266,88,34,131"/>
-        <TextBlock Width="200" Height="15" Text="Price" FontSize="12" Margin="266,130,34,89" Foreground="White" />
+        <TextBlock Width="200" Height="15" Text="Name" FontSize="12" Margin="266,41,34,178" Foreground="Blue"/>
+        <TextBlock Width="200" Height="15" Text="Description" FontSize="12" TextWrapping="Wrap" Foreground="Blue" Margin="266,88,34,131"/>
+        <TextBlock Width="200" Height="15" Text="Price" FontSize="12" Margin="266,130,34,89" Foreground="Blue" />
         <TextBox x:Name="ProductName" Width="200" Height="25" FontSize="18" Margin="266,63,34,146" Foreground="#FF6A6A6A"/>
         <TextBox x:Name="Description" Width="200" Height="25" FontSize="18" Margin="266,105,34,104" Foreground="#FF6A6A6A"/>
         <TextBox x:Name="Price" Width="200" Height="25" FontSize="18" Margin="266,146,34,63" Foreground="#FF6A6A6A"/>
         <Button Background="#FF4572A0" Width="200" Height="25" BorderBrush="#FF4572A0" Content="SHOP NOW" Click="ButtonConfirmPayment_Click" Margin="266,185,34,24"/>
+        <TextBlock Width="207" Height="143" Text="Image Here" FontSize="40" Margin="75,113,318,78" Foreground="Blue" />
+
         <Image Source="{Binding buttonImage}" x:Name="Image"  Height="143" HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top" Width="207" Margin="58,113,0,0">
+    
         </Image> 
 
 

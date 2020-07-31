@@ -50,8 +50,9 @@ namespace LeoBayView.Pages.RegisterView
                 {
                     string welcomeMessage = _loginController.GetCurrentUser();
                     MessageBox.Show(welcomeMessage);
-                    FrameMain.Navigate(new ShowItemsView());
                     Reset();
+                    FrameMain.Navigate(new ShowItemsView());
+                
                 }
                 else
                 {

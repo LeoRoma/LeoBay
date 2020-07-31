@@ -28,6 +28,7 @@ namespace LeoBayView.ItemsManagerView
     {
         private ItemsManagerController _itemsManagerController = new ItemsManagerController();
         private ShowItemsView _showItemsView = new ShowItemsView();
+        //private YourSpace _yourSpace = new YourSpace();
         public AddItem()
         {
             InitializeComponent();
@@ -59,10 +60,12 @@ namespace LeoBayView.ItemsManagerView
             string image = TextBoxImage1.Text;
             _itemsManagerController.AddNewItem(name, price, description, image);
             MessageBox.Show("You have added an item!");
-            _showItemsView.PopulateAllItems();
-            this.Close();
             
-            FrameMain.Navigate(new ShowItemsView());
+            this.Close();
+
+            FrameMain.Navigate(_showItemsView);
+            _showItemsView.PopulateAllItems();
+            //_yourSpace.GetCurrentItems();
         }
     }
 }
