@@ -2,8 +2,9 @@
 
 ## Description
 
-First personal project in Sparta Global.
-The application that allows the users to list, buy and sell items.
+- First personal project in Sparta Global.
+- The application lets a user to signup and login, once the user is logged in they can post one or more items to sell.
+- The posted items are visible from other users, and if a user is interested in the item, they can purchase it.
 
 ## Features
 
