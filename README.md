@@ -99,3 +99,17 @@ Implement the GUI and fix possible bugs
 **What can I improve**
 - Need to add the image in the shopping cart
 - Some redirection is not working properly
+
+## Screenshots
+
+### Login
+
+![Image screenshot](./screenshots/login.png)
+
+### Public Space
+
+![Image screenshot](./screenshots/publiclist.png)
+
+### Add Item
+
+![Image screenshot](./screenshots/additem.png)
